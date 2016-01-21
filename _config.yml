@@ -11,8 +11,8 @@ email: swift-dev@lists.swift.org
 description: > # this means to ignore newlines until "baseurl:"
   Official guidelines for Swift API design.
 timezone: America/Los_Angeles
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://yourdomain.com" # the base hostname & protocol for your site
+baseurl: "/swift-api-guidelines"
+url: "http://dabrahams.github.io" # the base hostname & protocol for your site
 # twitter_username: SwiftLang
 # github_username:  jekyll
 
@@ -21,4 +21,9 @@ markdown: kramdown
 
 kramdown:
     syntax_highlighter: rouge
+
+sass:
+    style: compressed
+    sass_dir: _sass
+
 
