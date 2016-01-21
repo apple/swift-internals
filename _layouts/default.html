@@ -3,18 +3,16 @@
 
   {% include head.html %}
 
-  <body>
+<body>
+  {% include header.html %}
 
-    {% include header.html %}
+  <main role="main">
+    {{ content }}
+  </main>
 
-    <div class="page-content">
-      <div class="wrapper">
-        {{ content }}
-      </div>
-    </div>
+  {% include footer.html %}
 
-    {% include footer.html %}
-
-  </body>
+  <script src="https://swift.org/assets/javascripts/application.js"></script>
+</body>
 
 </html>
