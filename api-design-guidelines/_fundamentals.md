@@ -5,7 +5,7 @@
   written.
 
 * <a name="clarity-over-brevity"></a>**Clarity is more important than
-  brevity**.  Although Swift code can be compact, it is a *non-goal*
+  brevity.**  Although Swift code can be compact, it is a *non-goal*
   to enable the smallest possible code with the fewest characters.
   Brevity in Swift code, where it occurs, is a side-effect of the
   strong type system and features that naturally reduce boilerplate.

@@ -3,12 +3,12 @@
 ### General Conventions
 
 * **Document the complexity of any computed property that is not
-  O(1)**.  People often assume that property access involves no
+  O(1).**  People often assume that property access involves no
   significant computation, because they have stored properties as a
   mental model. Be sure to alert them when that assumption may be
   violated.
 
-* **Prefer methods and properties to free functions**.  Free functions
+* **Prefer methods and properties to free functions.**  Free functions
   are used only in special cases:
 
   <details markdown="1">
@@ -33,7 +33,7 @@
      ~~~
   </details>
 
-* **Follow case conventions:** names of types, protocols and enum
+* **Follow case conventions.**  Names of types, protocols and enum
   cases are `UpperCamelCase`.  Everything else is `lowerCamelCase`.
 
 {% comment %}
@@ -43,8 +43,8 @@
    your API.
 {% endcomment %}
 
-* **Methods can share a base name when they share the same basic meaning**
-  but operate on different types, or are in different domains.
+* **Methods can share a base name** when they share the same basic meaning
+  but operate on different types, or when they are in different domains.
 
   <details markdown="1">
   <summary></summary>
@@ -92,7 +92,7 @@
   ~~~
 
   Lastly, avoid “overloading on return type” because it causes
-  ambiguities in the presence of type inference:
+  ambiguities in the presence of type inference.
 
   ~~~ swift
   extension Box {
@@ -117,7 +117,7 @@
   <details markdown="1">
   <summary></summary>
   Default arguments improve readability by
-  hiding irrelevant information.  For example,
+  hiding irrelevant information.  For example:
 
   <figure class="bad" markdown="1">
   ~~~ swift
@@ -136,7 +136,7 @@
 
   Default arguments are generally preferable to the use of method
   families, because they impose a lower cognitive burden on anyone
-  trying to understand the API:
+  trying to understand the API.
 
   <figure class="good" markdown="1">
   ~~~ swift
@@ -175,24 +175,24 @@
   understand all of them, and occasional surprising relationships—for
   example, `fooWithBar(nil)` and `foo()` aren't always synonyms—make
   this a tedious process of ferreting out minor differences in
-  mostly-identical documentation.  Using a single method with
+  mostly identical documentation.  Using a single method with
   defaults provides a vastly superior programmer experience.
   </details>
 
-* **Prefer to locate parameters with defaults towards the end** of the
+* **Prefer to locate parameters with defaults toward the end** of the
   parameter list.  Parameters without defaults are usually more
   essential to the semantics of a method, and provide a stable initial
   pattern of use where methods are invoked.
 
 * **Prefer to follow the language's defaults for the presence of
-  argument labels**
+  argument labels.**
 
   <details markdown="1">
   <summary></summary>
   In other words, usually:
 
   - First parameters to methods and functions should *not*
-    have required argument labels
+    have required argument labels.
   - Other parameters to methods and functions *should* have required
     argument labels.
   - All parameters to initializers should have required argument
@@ -210,7 +210,7 @@
 
   * **In initializers that should be seen as “full-width type
     conversions,”** the initial argument should be the source of the
-    conversion, and should be unlabelled.
+    conversion, and should be unlabeled.
 
     <details markdown="1">
     <summary></summary>
@@ -229,7 +229,7 @@
     </figure>
 
     In “narrowing” type conversions, though, a label that describes
-    the narrowing is recommended:
+    the narrowing is recommended.
 
     ~~~ swift
     extension UInt32 {
@@ -241,7 +241,7 @@
     </details>
 
   * **When all parameters are peers that can't be usefully
-    distinguished**, none should be labelled.  Well-known examples
+    distinguished**, none should be labeled.  Well-known examples
     include `min(number1, number2)` and `zip(sequence1, sequence2)`.
 
   * <a name="first-argument-label">**When the first argument is
@@ -262,8 +262,8 @@
 
      As you can see, this practice makes calls read correctly regardless
      of whether the argument is passed explicitly.  If instead you
-     *omit* the parameter description, the call may incorrectly imply
-     the argument is the direct object of the “sentence:”
+     *omit* the parameter description, the call may incorrectly imply that
+     the argument is the direct object of the “sentence.”
 
     <figure class="bad" markdown="1">
     ~~~ swift
@@ -275,7 +275,7 @@
     </figure>
 
      If you attach the parameter description to the function's base
-     name, it will “dangle” when the default is used:
+     name, it will “dangle” when the default is used.
 
     <figure class="bad" markdown="1">
     ~~~ swift

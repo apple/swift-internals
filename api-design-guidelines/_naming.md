@@ -8,7 +8,7 @@
 <details markdown="1">
   <summary></summary>
 For example, consider a method that removes the element at a
-given position within a collection
+given position within a collection.
 
 <figure class="good" markdown="1">
 ~~~ swift
@@ -37,7 +37,7 @@ employees.remove(x) // unclear: are we removing x?
 
 </details>
 
-* <a name="omit-needless-words">**Omit Needless Words**</a>.  Every word in a name should convey salient
+* <a name="omit-needless-words">**Omit needless words.**</a>  Every word in a name should convey salient
   information at the use site.
 
 <details markdown="1">
@@ -45,7 +45,7 @@ employees.remove(x) // unclear: are we removing x?
 More words may be needed to clarify intent or disambiguate
 meaning, but those that are redundant with information the reader
 already possesses should be omitted. In particular, omit words that
-*merely* repeat type information:
+*merely repeat* type information.
 
 <figure class="bad" markdown="1">
 ~~~ swift
@@ -72,7 +72,7 @@ describes a parameter's *role* rather than its type. See the next
 item for details.
 </details>
 
-* <a name="weak-type-information">**Compensate For Weak Type Information**</a> as needed to clarify a
+* <a name="weak-type-information">**Compensate for weak type information**</a> as needed to clarify a
   parameter's **role**.
 
 <details markdown="1">
@@ -80,7 +80,7 @@ item for details.
 Especially when a parameter type is `NSObject`, `Any`, `AnyObject`,
 or a fundamental type such `Int` or `String`, type information and
 context at the point of use may not fully convey intent. In this
-example, the declaration may be clear, but the use site is vague:
+example, the declaration may be clear, but the use site is vague.
 
 <figure class="bad" markdown="1">
 ~~~ swift
@@ -90,7 +90,7 @@ grid.add(self, for: graphics) // vague
 ~~~
 </figure>
 
-To restore clarity, **precede each weakly-typed parameter with a
+To restore clarity, **precede each weakly typed parameter with a
 noun describing its role**:
 
 <figure class="good" markdown="1">
@@ -107,7 +107,7 @@ grid.addObserver(self, forKeyPath: graphics) // clear
 * Uses of **mutating methods should read as imperative verb phrases**,
   e.g., `x.reverse()`, `x.sort()`, `x.append(y)`.
 
-* Uses of **non-mutating methods should read as noun phrases** when
+* Uses of **nonmutating methods should read as noun phrases** when
   possible, e.g. `x.distanceTo(y)`, `i.successor()`.
 
 <details markdown="1">
@@ -121,16 +121,16 @@ let firstAndLast = fullName.split() // acceptable
 </details>
 
 * When **a mutating method is described by a verb, name its
-  non-mutating counterpart** according to the **“ed/ing” rule**,
-  e.g. the non-mutating versions of `x.sort()` and `x.append(y)` are
+  nonmutating counterpart** according to the **“ed/ing” rule**,
+  e.g. the nonmutating versions of `x.sort()` and `x.append(y)` are
   `x.sorted()` and `x.appending(y)`.
 
 <details markdown="1">
   <summary></summary>
-Often, a mutating method will have a non-mutating variant returning
+Often, a mutating method will have a nonmutating variant returning
 the same, or a similar, type as the receiver.
 
-* Prefer to name the non-mutating variant using the verb's past
+* Prefer to name the nonmutating variant using the verb's past
  tense (usually appending “ed”):
 
 ~~~ swift
@@ -145,7 +145,7 @@ let y = x.reversed()
 ~~~
 
 * When adding “ed” is not grammatical because the verb has a
- direct object, name the non-mutating variant using the verb's
+ direct object, name the nonmutating variant using the verb's
  gerund form (usually appending “ing”):
 
 ~~~ swift
@@ -161,7 +161,7 @@ let oneLine = t.strippingNewlines()
 
 </details>
 
-* <a name="boolean-assertions">Uses</a> of non-mutating **Boolean
+* <a name="boolean-assertions">Uses</a> of nonmutating **Boolean
   methods and properties should read as assertions about the
   receiver**, e.g. `x.isEmpty`, `line1.intersects(line2)`.
 
@@ -200,14 +200,14 @@ the term strictly in accordance with its accepted meaning.
   likely to do a web search and find its traditional meaning.
 </details>
 
-* **Avoid abbreviations**. Abbreviations, especially non-standard
+* **Avoid abbreviations.** Abbreviations, especially non-standard
   ones, are effectively terms-of-art, because understanding depends on
   correctly translating them into their non-abbreviated forms.
 
   > The intended meaning for any abbreviation you use should be
   > easily found by a web search.
 
-* **Embrace precedent:** Don't optimize terms for the total beginner
+* **Embrace precedent.** Don't optimize terms for the total beginner
   at the expense of conformance to existing culture.
 
 <details markdown="1">
@@ -221,7 +221,7 @@ programmers are familiar with, and their web searches and
 questions will be rewarded.
 
 Within a particular programming *domain*, such as mathematics, a
-widely-precedented term such as `sin(x)` is preferable to an
+widely precedented term such as `sin(x)` is preferable to an
 explanatory phrase such as
 `verticalPositionOnUnitCircleAtOriginOfEndOfRadiusWithAngle(x)`.
 Note that in this case, precedent outweighs the guideline to
