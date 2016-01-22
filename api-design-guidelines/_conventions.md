@@ -175,7 +175,7 @@
   understand all of them, and occasional surprising relationships—for
   example, `fooWithBar(nil)` and `foo()` aren't always synonyms—make
   this a tedious process of ferreting out minor differences in
-  mostly-identical documentation.  Using a single method with
+  mostly identical documentation.  Using a single method with
   defaults provides a vastly superior programmer experience.
   </details>
 

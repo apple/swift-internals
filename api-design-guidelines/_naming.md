@@ -90,7 +90,7 @@ grid.add(self, for: graphics) // vague
 ~~~
 </figure>
 
-To restore clarity, **precede each weakly-typed parameter with a
+To restore clarity, **precede each weakly typed parameter with a
 noun describing its role**:
 
 <figure class="good" markdown="1">
@@ -107,7 +107,7 @@ grid.addObserver(self, forKeyPath: graphics) // clear
 * Uses of **mutating methods should read as imperative verb phrases**,
   e.g., `x.reverse()`, `x.sort()`, `x.append(y)`.
 
-* Uses of **non-mutating methods should read as noun phrases** when
+* Uses of **nonmutating methods should read as noun phrases** when
   possible, e.g. `x.distanceTo(y)`, `i.successor()`.
 
 <details markdown="1">
@@ -121,16 +121,16 @@ let firstAndLast = fullName.split() // acceptable
 </details>
 
 * When **a mutating method is described by a verb, name its
-  non-mutating counterpart** according to the **“ed/ing” rule**,
-  e.g. the non-mutating versions of `x.sort()` and `x.append(y)` are
+  nonmutating counterpart** according to the **“ed/ing” rule**,
+  e.g. the nonmutating versions of `x.sort()` and `x.append(y)` are
   `x.sorted()` and `x.appending(y)`.
 
 <details markdown="1">
   <summary></summary>
-Often, a mutating method will have a non-mutating variant returning
+Often, a mutating method will have a nonmutating variant returning
 the same, or a similar, type as the receiver.
 
-* Prefer to name the non-mutating variant using the verb's past
+* Prefer to name the nonmutating variant using the verb's past
  tense (usually appending “ed”):
 
 ~~~ swift
@@ -145,7 +145,7 @@ let y = x.reversed()
 ~~~
 
 * When adding “ed” is not grammatical because the verb has a
- direct object, name the non-mutating variant using the verb's
+ direct object, name the nonmutating variant using the verb's
  gerund form (usually appending “ing”):
 
 ~~~ swift
@@ -161,7 +161,7 @@ let oneLine = t.strippingNewlines()
 
 </details>
 
-* <a name="boolean-assertions">Uses</a> of non-mutating **Boolean
+* <a name="boolean-assertions">Uses</a> of nonmutating **Boolean
   methods and properties should read as assertions about the
   receiver**, e.g. `x.isEmpty`, `line1.intersects(line2)`.
 
@@ -221,7 +221,7 @@ programmers are familiar with, and their web searches and
 questions will be rewarded.
 
 Within a particular programming *domain*, such as mathematics, a
-widely-precedented term such as `sin(x)` is preferable to an
+widely precedented term such as `sin(x)` is preferable to an
 explanatory phrase such as
 `verticalPositionOnUnitCircleAtOriginOfEndOfRadiusWithAngle(x)`.
 Note that in this case, precedent outweighs the guideline to
