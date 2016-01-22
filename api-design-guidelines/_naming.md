@@ -45,7 +45,7 @@ employees.remove(x) // unclear: are we removing x?
 More words may be needed to clarify intent or disambiguate
 meaning, but those that are redundant with information the reader
 already possesses should be omitted. In particular, omit words that
-*merely* repeat type information.
+*merely repeat* type information.
 
 <figure class="bad" markdown="1">
 ~~~ swift
