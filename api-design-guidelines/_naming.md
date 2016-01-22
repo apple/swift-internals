@@ -37,7 +37,7 @@ employees.remove(x) // unclear: are we removing x?
 
 </details>
 
-* <a name="omit-needless-words">**Omit Needless Words.**</a>  Every word in a name should convey salient
+* <a name="omit-needless-words">**Omit needless words.**</a>  Every word in a name should convey salient
   information at the use site.
 
 <details markdown="1">
@@ -72,7 +72,7 @@ describes a parameter's *role* rather than its type. See the next
 item for details.
 </details>
 
-* <a name="weak-type-information">**Compensate For Weak Type Information**</a> as needed to clarify a
+* <a name="weak-type-information">**Compensate for weak type information**</a> as needed to clarify a
   parameter's **role**.
 
 <details markdown="1">
