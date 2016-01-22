@@ -262,7 +262,7 @@
 
      As you can see, this practice makes calls read correctly regardless
      of whether the argument is passed explicitly.  If instead you
-     *omit* the parameter description, the call may incorrectly imply
+     *omit* the parameter description, the call may incorrectly imply that
      the argument is the direct object of the “sentence.”
 
     <figure class="bad" markdown="1">
