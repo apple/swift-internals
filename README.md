@@ -13,7 +13,7 @@ standard library, as well as the development version of the
    sudo/root/admin privileges.
 3. `bundle install`—run this command as a regular, unprivileged user.
 4. `LC_ALL=en_us.UTF-8 bundle exec jekyll serve --baseurl /swift-internals`
-5. Visit [localhost:4000/swift-internals](localhost:4000/swift-internals).
+5. Visit [http://localhost:4000/swift-internals](http://localhost:4000/swift-internals).
 6. Make edits to the source, refresh your browser, lather, rinse, repeat.
 
 Notes: 
