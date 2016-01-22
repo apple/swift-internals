@@ -1,0 +1,60 @@
+{% comment %}
+  Generates a nested navigation menu for all pages that don't have
+
+    include_in_navigation: false 
+
+  in their front matter.
+
+  Based loosely on https://gist.github.com/kasperisager/9416313
+{% endcomment %}
+<ul>
+    {% if include.context == "/" %}
+        <li class="{% if page.url == "/" %}active{% endif %}">
+            <a href="{{ site.baseurl }}/">{{ site.title }}</a>
+        </li>
+    {% endif %}
+
+    {% assign sorted_pages = site.pages | sort: "path" %}
+    {% for sub_page in sorted_pages %}
+
+        {% comment %}
+        compute the parent url by dropping the last part of the path;
+        if it ends with index.html, drop the last two parts.
+        {% endcomment %}
+
+        {% assign parent_url = '' %}
+        {% assign drop_count = 1 %}
+        {% assign url_components = sub_page.url | split:"/" | reverse %}
+        {% for component in url_components %}
+          {% if forloop.index0 >= drop_count %}
+             {% capture parent_url %}{{component}}/{{parent_url}}{% endcapture %}
+          {% else %}
+             {% if component == 'index.html' and forloop.index0 == 0 %}
+               {% assign drop_count = 2 %}
+             {% endif %}
+          {% endif %}
+        {% endfor %}
+
+        {% comment -- uncomment these for debugging -- %}
+        <li>drop_count: {{drop_count}}</li>
+        <li>sub_page.url: {{sub_page.url}}</li>
+        <li>parent_url: {{parent_url}}</li>
+        <li>include.context: {{include.context}}</li>
+        {% endcomment %}
+
+        {% comment %}
+          if we're at the right level of the hierarchy, generate a
+          bullet and recursively expand this file with a new parent
+          context, to get all of sub_page's sub-pages.
+        {% endcomment %}
+
+        {% if parent_url == include.context and sub_page.include_in_navigation %}
+            <li class="{% if page.url contains sub_page.url %}active{% endif %}">
+                <a href="{{ site.baseurl }}{{ sub_page.url }}">{{ sub_page.title }}</a>
+                {% assign context = sub_page.url | remove:'index.html' %}
+                {% include navigation.html context=context %}
+            </li>
+        {% endif %}
+    {% endfor %}
+</ul>
+
