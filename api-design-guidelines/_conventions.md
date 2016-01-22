@@ -179,7 +179,7 @@
   defaults provides a vastly superior programmer experience.
   </details>
 
-* **Prefer to locate parameters with defaults towards the end** of the
+* **Prefer to locate parameters with defaults toward the end** of the
   parameter list.  Parameters without defaults are usually more
   essential to the semantics of a method, and provide a stable initial
   pattern of use where methods are invoked.
@@ -210,7 +210,7 @@
 
   * **In initializers that should be seen as “full-width type
     conversions,”** the initial argument should be the source of the
-    conversion, and should be unlabelled.
+    conversion, and should be unlabeled.
 
     <details markdown="1">
     <summary></summary>
@@ -241,7 +241,7 @@
     </details>
 
   * **When all parameters are peers that can't be usefully
-    distinguished**, none should be labelled.  Well-known examples
+    distinguished**, none should be labeled.  Well-known examples
     include `min(number1, number2)` and `zip(sequence1, sequence2)`.
 
   * <a name="first-argument-label">**When the first argument is
