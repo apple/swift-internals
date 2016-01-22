@@ -3,12 +3,12 @@
 ### General Conventions
 
 * **Document the complexity of any computed property that is not
-  O(1)**.  People often assume that property access involves no
+  O(1).**  People often assume that property access involves no
   significant computation, because they have stored properties as a
   mental model. Be sure to alert them when that assumption may be
   violated.
 
-* **Prefer methods and properties to free functions**.  Free functions
+* **Prefer methods and properties to free functions.**  Free functions
   are used only in special cases:
 
   <details markdown="1">
@@ -33,7 +33,7 @@
      ~~~
   </details>
 
-* **Follow case conventions:** names of types, protocols and enum
+* **Follow case conventions.**  Names of types, protocols and enum
   cases are `UpperCamelCase`.  Everything else is `lowerCamelCase`.
 
 {% comment %}
@@ -185,7 +185,7 @@
   pattern of use where methods are invoked.
 
 * **Prefer to follow the language's defaults for the presence of
-  argument labels**
+  argument labels.**
 
   <details markdown="1">
   <summary></summary>

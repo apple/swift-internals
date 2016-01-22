@@ -37,7 +37,7 @@ employees.remove(x) // unclear: are we removing x?
 
 </details>
 
-* <a name="omit-needless-words">**Omit Needless Words**</a>.  Every word in a name should convey salient
+* <a name="omit-needless-words">**Omit Needless Words.**</a>  Every word in a name should convey salient
   information at the use site.
 
 <details markdown="1">
@@ -200,14 +200,14 @@ the term strictly in accordance with its accepted meaning.
   likely to do a web search and find its traditional meaning.
 </details>
 
-* **Avoid abbreviations**. Abbreviations, especially non-standard
+* **Avoid abbreviations.** Abbreviations, especially non-standard
   ones, are effectively terms-of-art, because understanding depends on
   correctly translating them into their non-abbreviated forms.
 
   > The intended meaning for any abbreviation you use should be
   > easily found by a web search.
 
-* **Embrace precedent:** Don't optimize terms for the total beginner
+* **Embrace precedent.** Don't optimize terms for the total beginner
   at the expense of conformance to existing culture.
 
 <details markdown="1">
