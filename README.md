@@ -3,8 +3,8 @@
 To serve locally, 
 
 ```
-gem install github-pages
-bundle exec jekyll serve --baseurl /swift-api-guidelines
+sudo gem install github-pages
+bundle exec jekyll serve --baseurl /swift-internals
 ```
 
-and visit localhost:4000/swift-api-guidelines.
+and visit [localhost:4000/swift-internals](localhost:4000/swift-internals).

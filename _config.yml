@@ -14,7 +14,7 @@ timezone: America/Los_Angeles
 baseurl: "/swift-internals"
 url: "http://apple.github.io"
 
-exclude: [config.ru, Gemfile, Gemfile.lock, Procfile, vendor, api-guidelines/api-design-guidelines.md ]
+exclude: [config.ru, Gemfile, Gemfile.lock, Procfile, vendor, README.md]
 
 # twitter_username: SwiftLang
 # github_username:  jekyll
