@@ -192,7 +192,7 @@
   In other words, usually:
 
   - First parameters to methods and functions should *not*
-    have required argument labels
+    have required argument labels.
   - Other parameters to methods and functions *should* have required
     argument labels.
   - All parameters to initializers should have required argument
