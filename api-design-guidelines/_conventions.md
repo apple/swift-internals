@@ -43,8 +43,8 @@
    your API.
 {% endcomment %}
 
-* **Methods can share a base name when they share the same basic meaning**
-  but operate on different types, or are in different domains.
+* **Methods can share a base name** when they share the same basic meaning
+  but operate on different types, or when they are in different domains.
 
   <details markdown="1">
   <summary></summary>
