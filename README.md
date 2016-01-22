@@ -6,7 +6,7 @@ which hosts internal documentation for the Swift compiler and
 standard library, as well as the development version of the
 [Swift API Guidelines](https://swift.org/documentation/api-design-guidelines.html).
 
-## To develop/test locally, 
+## Local Testing and Development
 
 1. Have Ruby >= 2.0.0 installed.
 2. `gem install bundler`—this command must normally be run with
