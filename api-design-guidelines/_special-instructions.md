@@ -26,7 +26,7 @@ struct Array<Element> {
 These methods form a semantic family, and the argument types
 appear at first to be sharply distinct.  However, when `Element`
 is `Any`, a single element can have the same type as a sequence of
-elements:
+elements.
 
 <figure class="bad" markdown="1">
 ~~~ swift
@@ -36,7 +36,7 @@ values.append([2, 3, 4]) // [1, "a", [2, 3, 4]] or [1, "a", 2, 3, 4]?
 </figure>
 
 To eliminate the ambiguity, name the second overload more
-explicitly:
+explicitly.
 
 <figure class="good" markdown="1">
 ~~~ swift

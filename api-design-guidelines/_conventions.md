@@ -92,7 +92,7 @@
   ~~~
 
   Lastly, avoid “overloading on return type” because it causes
-  ambiguities in the presence of type inference:
+  ambiguities in the presence of type inference.
 
   ~~~ swift
   extension Box {
@@ -117,7 +117,7 @@
   <details markdown="1">
   <summary></summary>
   Default arguments improve readability by
-  hiding irrelevant information.  For example,
+  hiding irrelevant information.  For example:
 
   <figure class="bad" markdown="1">
   ~~~ swift
@@ -136,7 +136,7 @@
 
   Default arguments are generally preferable to the use of method
   families, because they impose a lower cognitive burden on anyone
-  trying to understand the API:
+  trying to understand the API.
 
   <figure class="good" markdown="1">
   ~~~ swift
@@ -229,7 +229,7 @@
     </figure>
 
     In “narrowing” type conversions, though, a label that describes
-    the narrowing is recommended:
+    the narrowing is recommended.
 
     ~~~ swift
     extension UInt32 {
@@ -263,7 +263,7 @@
      As you can see, this practice makes calls read correctly regardless
      of whether the argument is passed explicitly.  If instead you
      *omit* the parameter description, the call may incorrectly imply
-     the argument is the direct object of the “sentence:”
+     the argument is the direct object of the “sentence.”
 
     <figure class="bad" markdown="1">
     ~~~ swift
@@ -275,7 +275,7 @@
     </figure>
 
      If you attach the parameter description to the function's base
-     name, it will “dangle” when the default is used:
+     name, it will “dangle” when the default is used.
 
     <figure class="bad" markdown="1">
     ~~~ swift

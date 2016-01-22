@@ -8,7 +8,7 @@
 <details markdown="1">
   <summary></summary>
 For example, consider a method that removes the element at a
-given position within a collection
+given position within a collection.
 
 <figure class="good" markdown="1">
 ~~~ swift
@@ -45,7 +45,7 @@ employees.remove(x) // unclear: are we removing x?
 More words may be needed to clarify intent or disambiguate
 meaning, but those that are redundant with information the reader
 already possesses should be omitted. In particular, omit words that
-*merely* repeat type information:
+*merely* repeat type information.
 
 <figure class="bad" markdown="1">
 ~~~ swift
@@ -80,7 +80,7 @@ item for details.
 Especially when a parameter type is `NSObject`, `Any`, `AnyObject`,
 or a fundamental type such `Int` or `String`, type information and
 context at the point of use may not fully convey intent. In this
-example, the declaration may be clear, but the use site is vague:
+example, the declaration may be clear, but the use site is vague.
 
 <figure class="bad" markdown="1">
 ~~~ swift
