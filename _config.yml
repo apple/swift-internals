@@ -8,7 +8,7 @@
 # Site settings
 title: Swift Internals
 email: swift-dev@lists.swift.org
-description: > # this means to ignore newlines until "baseurl:"
+description: > # > means to ignore newlines until the next unindented line
   Official guidelines for Swift API design.
 timezone: America/Los_Angeles
 baseurl: "/swift-internals"
