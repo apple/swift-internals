@@ -29,6 +29,11 @@ sass:
     style: compressed
     sass_dir: _sass
 
+gems:
+  - jekyll-redirect-from
+
+whitelist:
+  - jekyll-redirect-from
 
 defaults:
   -
