@@ -34,7 +34,13 @@ article {
      margin-top: auto;
   }
 
+  .screenonly {
+      display: none;
+  }
   @media screen {
+    .screenonly {
+        display: inherit;
+    }
     input.detail[type=checkbox]:before {
         content: "▶ ";
         visibility: visible;
@@ -45,14 +51,14 @@ article {
         font-variant: small-caps;
         border-bottom: 1px #ccc dashed;
         color: #666666;
-        content: "More detail";
+        content: "Expand";
         visibility: visible;
     }
     input.detail[type=checkbox]:checked:before {
         content: "▼ ";
     }
     input.detail[type=checkbox]:checked:after {
-        content: "Less detail";
+        content: "Collapse";
     }
     input.detail[type=checkbox] + .more {
       transition:0.5s opacity ease, 0.5s max-height ease;

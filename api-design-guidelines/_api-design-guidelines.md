@@ -1,3 +1,11 @@
+
+<div class="info screenonly" markdown="1">
+To faciliate use as a quick reference, the details of many guidelines
+can be expanded individually. Details are never hidden when this page
+is printed.
+<input type="button" id="toggle" value="Expand all details now" onClick="show_or_hide_all()" />
+</div>
+
 ## Table of Contents
 
 * [Fundamentals](#fundamentals)
@@ -26,6 +34,38 @@ for (i in elements) {
         element.innerHTML = element.textContent
             .replace(/\*\*([^\*]+)\*\*/g, "<strong>$1</strong>")
             .replace(/\*([^\*]+)\*/g, "<em>$1</em>");
+    }
+}
+function show_or_hide_all(){
+    var checkboxes = document.getElementsByClassName('detail');
+    var button = document.getElementById('toggle');
+
+    if(button.value == 'Expand all details now'){
+        for (var i in checkboxes){
+            checkboxes[i].checked = 'FALSE';
+        }
+        button.value = 'Collapse all details now'
+    }else{
+        for (var i in checkboxes){
+            checkboxes[i].checked = '';
+        }
+        button.value = 'Expand all details now';
+    }
+}
+function show_or_hide_all(){
+    var checkboxes = document.getElementsByClassName('detail');
+    var button = document.getElementById('toggle');
+
+    if(button.value == 'Expand all details now'){
+        for (var i in checkboxes){
+            checkboxes[i].checked = 'FALSE';
+        }
+        button.value = 'Collapse all details now'
+    }else{
+        for (var i in checkboxes){
+            checkboxes[i].checked = '';
+        }
+        button.value = 'Expand all details now';
     }
 }
 </script>
