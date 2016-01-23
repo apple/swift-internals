@@ -23,7 +23,9 @@ var elements = document.querySelectorAll("pre code");
 for (i in elements) {
     var element = elements[i];
     if (element.textContent) {
-        element.innerHTML = element.textContent.replace(/\*\*([^\*]+)\*\*/g, "<strong>$1</strong>");
+        element.innerHTML = element.textContent
+            .replace(/\*\*([^\*]+)\*\*/g, "<strong>$1</strong>")
+            .replace(/\*([^\*]+)\*/g, "<em>$1</em>");
     }
 }
 </script>
