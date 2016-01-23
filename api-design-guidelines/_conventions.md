@@ -219,7 +219,7 @@
     ~~~
     extension String {
       // Convert `x` into its textual representation in the given radix
-      init(**_** x: BigInt, radix: Int = 10) // Note the initial separate underscore
+      init(**_** x: BigInt, radix: Int = 10)   <span class="commentary">← Note the initial underscore</span>
     }
 
     text = "The value is: "
@@ -234,7 +234,7 @@
 
     ~~~ swift
     extension UInt32 {
-      init(**_** value: Int16)            // widening, so no label
+      init(**_** value: Int16)            <span class="commentary">← Widening, so no label</span>
       init(**truncating** bits: UInt64)
       init(**saturating** value: UInt64)
     }
@@ -271,7 +271,7 @@
     extension Document {
       func close(completion: ((Bool) -> Void)? **= nil**)
     }
-    doc.**close(app.quit)**              // Closing the quit function?
+    doc.**close(app.quit)**              <span class="commentary">← Closing the quit method?</span>
     ~~~
     </figure>
 
@@ -283,7 +283,7 @@
     extension Document {
       func close**WithCompletionHandler**(completion: ((Bool) -> Void)? **= nil**)
     }
-    doc.**closeWithCompletionHandler()**   // What completion handler?
+    doc.**closeWithCompletionHandler()** <span class="commentary">← What completion handler?</span>
     ~~~
     </figure>
 
