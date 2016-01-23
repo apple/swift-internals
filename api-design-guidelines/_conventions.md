@@ -11,8 +11,8 @@
 * **Prefer methods and properties to free functions.**  Free functions
   are used only in special cases:
 
-  <details markdown="1">
-  <summary></summary>
+  {{expand}}
+  {{detail}}
 
   1. When there's no obvious `self`:
 
@@ -31,7 +31,8 @@
      ~~~
      sin(x)
      ~~~
-  </details>
+
+  {{enddetail}}
 
 * **Follow case conventions.**  Names of types, protocols and enum
   cases are `UpperCamelCase`.  Everything else is `lowerCamelCase`.
@@ -46,8 +47,8 @@
 * **Methods can share a base name** when they share the same basic meaning
   but operate on different types, or when they are in different domains.
 
-  <details markdown="1">
-  <summary></summary>
+  {{expand}}
+  {{detail}}
   For example, the following is encouraged, since the methods do essentially
   the same things:
 
@@ -106,7 +107,7 @@
   }
   ~~~
   </figure>
-  </details>
+  {{enddetail}}
 
 ### Parameters
 
@@ -114,8 +115,8 @@
   uses.  Any parameter with a single commonly-used value is a
   candidate for defaulting.
 
-  <details markdown="1">
-  <summary></summary>
+  {{expand}}
+  {{detail}}
   Default arguments improve readability by
   hiding irrelevant information.  For example:
 
@@ -177,7 +178,7 @@
   this a tedious process of ferreting out minor differences in
   mostly identical documentation.  Using a single method with
   defaults provides a vastly superior programmer experience.
-  </details>
+  {{enddetail}}
 
 * **Prefer to locate parameters with defaults toward the end** of the
   parameter list.  Parameters without defaults are usually more
@@ -187,8 +188,8 @@
 * **Prefer to follow the language's defaults for the presence of
   argument labels.**
 
-  <details markdown="1">
-  <summary></summary>
+  {{expand}}
+  {{detail}}
   In other words, usually:
 
   - First parameters to methods and functions should *not*
@@ -204,7 +205,7 @@
   ~~~
   **identifier**: **Type**
   ~~~
-  </details>
+  {{enddetail}}
 
   There are only a few exceptions:
 
@@ -212,8 +213,8 @@
     conversions,”** the initial argument should be the source of the
     conversion, and should be unlabeled.
 
-    <details markdown="1">
-    <summary></summary>
+    {{expand}}
+    {{detail}}
     <figure class="good" markdown="1">
     ~~~
     extension String {
@@ -238,7 +239,7 @@
       init(**saturating** value: UInt64)
     }
     ~~~
-    </details>
+    {{enddetail}}
 
   * **When all parameters are peers that can't be usefully
     distinguished**, none should be labeled.  Well-known examples
@@ -247,8 +248,8 @@
   * <a name="first-argument-label">**When the first argument is
     defaulted, it should have a distinct argument label**</a>.
 
-    <details markdown="1">
-    <summary></summary>
+    {{expand}}
+    {{detail}}
 
     <figure class="good" markdown="1">
     ~~~ swift
@@ -286,4 +287,4 @@
     ~~~
     </figure>
 
-    </details>
+    {{enddetail}}

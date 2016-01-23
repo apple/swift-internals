@@ -19,8 +19,9 @@
   functionality in simple terms, **you may have designed the wrong API.**
   </div>
   
-  <details markdown="1">
-    <summary></summary>
+  {{expand}}
+  
+  {{detail}}
   {% assign ref = 'https://developer.apple.com/library/prerelease/mac/documentation/Xcode/Reference/xcode_markup_formatting_ref/' %}
   {% capture SymbolDoc %}{{ref}}SymbolDocumentation.html#//apple_ref/doc/uid/TP40016497-CH51-{% endcapture %}
 
@@ -36,8 +37,9 @@
     func reversed() -> ReverseCollection<Self>
     ~~~
 
-    <details markdown="1">
-      <summary></summary>
+    {{expand}}
+    
+    {{detail}}
 
     * **Focus on the summary**; it's the most important part. Many
       excellent documentation comments consist of nothing more than a
@@ -92,14 +94,14 @@
         ...
       ~~~
 
-    </details>
+    {{enddetail}}
 
   * **Optionally, continue** with one or more paragraphs and bullet
     items.  Paragraphs are separated by blank lines and use complete
     sentences.
 
-    <details markdown="1">
-      <summary></summary>
+    {{expand}}
+    {{detail}}
 
     The following example shows the structure of a
     comment that uses these features:
@@ -142,6 +144,6 @@
       | [Requires]({{ref}}Requires.html) | [Returns]({{ref}}Returns.html) | [SeeAlso]({{ref}}SeeAlso.html) | [Since]({{ref}}Since.html) |
       | [Throws]({{ref}}Throws.html) | [Todo]({{ref}}Todo.html) | [Version]({{ref}}Version.html) | [Warning]({{ref}}Warning.html) |
 
-    </details>
+    {{enddetail}}
 
-  </details>
+  {{enddetail}}
