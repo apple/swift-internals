@@ -13,3 +13,64 @@ article {
        float: right; 
      }
 }
+
+article {
+  input.detail[type=checkbox] {
+     visibility: hidden;
+     cursor: pointer;
+     height: 0;
+     width: 100em;
+     margin-bottom: 2em;
+     display: block;
+     font-size: inherit;
+     font-style: inherit;
+     font-weight: inherit;
+     font-family: inherit;
+     position: relative;
+     top: -.85rem;
+  }
+
+  p + input.detail[type=checkbox] {
+     margin-top: auto;
+  }
+
+  @media screen {
+    input.detail[type=checkbox]:before {
+        content: "▶ ";
+        visibility: visible;
+        font-size: 80%;
+    }
+    input.detail[type=checkbox]:after {
+        text-transform: lowercase;
+        font-variant: small-caps;
+        border-bottom: 1px #ccc dashed;
+        color: #666666;
+        content: "More detail";
+        visibility: visible;
+    }
+    input.detail[type=checkbox]:checked:before {
+        content: "▼ ";
+    }
+    input.detail[type=checkbox]:checked:after {
+        content: "Less detail";
+    }
+    input.detail[type=checkbox] + .more {
+      transition:0.5s opacity ease, 0.5s max-height ease;
+    }
+
+    input.detail[type=checkbox]:checked + .more {
+        visibility: visible;
+        max-height: 1000rem;
+    }
+
+    input.detail[type=checkbox]:not(:checked) + .more {
+        overflow: hidden;
+        max-height:0px;
+        opacity:0;
+        }
+  }
+
+  .more > p:first-of-type {
+    margin-top: 0;
+  }
+}
