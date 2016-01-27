@@ -52,20 +52,4 @@ function show_or_hide_all(){
         button.value = 'Expand all details now';
     }
 }
-function show_or_hide_all(){
-    var checkboxes = document.getElementsByClassName('detail');
-    var button = document.getElementById('toggle');
-
-    if(button.value == 'Expand all details now'){
-        for (var i in checkboxes){
-            checkboxes[i].checked = 'FALSE';
-        }
-        button.value = 'Collapse all details now'
-    }else{
-        for (var i in checkboxes){
-            checkboxes[i].checked = '';
-        }
-        button.value = 'Expand all details now';
-    }
-}
 </script>
