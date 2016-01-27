@@ -131,7 +131,7 @@
   the same, or a similar, type as the receiver.
 
   * Prefer to name the nonmutating variant using the verb's past
-   tense (usually appending “ed”):
+   [participle](https://en.wikipedia.org/wiki/Participle) (usually appending “ed”):
 
   ~~~ swift
   /// Reverses `self` in-place.
@@ -144,9 +144,10 @@
   let y = x.reversed()
   ~~~
 
-  * When adding “ed” is not grammatical because the verb has a
-   direct object, name the nonmutating variant using the verb's
-   gerund form (usually appending “ing”):
+  * When adding “ed” is not grammatical because the verb has a direct
+   object, name the nonmutating variant using the verb's present
+   [participle](https://en.wikipedia.org/wiki/Participle), by
+   appending “ing.”:
 
   ~~~ swift
   /// Strips all the newlines from \`self\`
@@ -176,7 +177,8 @@
 ### Use Terminology Well
 
 **Term of Art**
-: *noun* - a word or phrase that has a precise, specialized meaning within a particular field or profession.
+: *noun* - a word or phrase that has a precise, specialized meaning
+  within a particular field or profession.
 
 * **Avoid obscure terms** if a more common word conveys meaning just
   as well.  Don't say “epidermis” if “skin” will serve your purpose.
