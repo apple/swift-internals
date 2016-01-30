@@ -211,7 +211,7 @@
 
   * **In initializers that should be seen as “full-width type
     conversions,”** the initial argument should be the source of the
-    conversion, and should be unlabeled.
+    conversion, and should be unlabelled.
 
     {{expand}}
     {{detail}}
@@ -242,7 +242,7 @@
     {{enddetail}}
 
   * **When all parameters are peers that can't be usefully
-    distinguished**, none should be labeled.  Well-known examples
+    distinguished**, none should be labelled.  Well-known examples
     include `min(number1, number2)` and `zip(sequence1, sequence2)`.
 
   * <a name="first-argument-label">**When the first argument is
