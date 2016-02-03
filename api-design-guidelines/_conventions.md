@@ -245,8 +245,8 @@
     distinguished**, none should be labeled.  Well-known examples
     include `min(number1, number2)` and `zip(sequence1, sequence2)`.
 
-  * <a name="first-argument-label">**When the first argument is
-    defaulted, it should have a distinct argument label**</a>.
+  * <a name="first-argument-label"></a>**When the first argument is
+    defaulted, it should have a distinct argument label**.
 
     {{expand}}
     {{detail}}
