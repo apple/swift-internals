@@ -1,6 +1,6 @@
 
 <div class="info screenonly" markdown="1">
-To faciliate use as a quick reference, the details of many guidelines
+To facilitate use as a quick reference, the details of many guidelines
 can be expanded individually. Details are never hidden when this page
 is printed.
 <input type="button" id="toggle" value="Expand all details now" onClick="show_or_hide_all()" />
