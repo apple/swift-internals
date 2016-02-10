@@ -251,8 +251,8 @@ is printed.
   item for details.
   {{enddetail}}
 
-* **Compensate for weak type information** as needed to clarify a
-  parameter's **role**.
+* **Compensate for weak type information** as needed to **clarify a
+  parameter's role**.
   {:#weak-type-information}
 
   {{expand}}
