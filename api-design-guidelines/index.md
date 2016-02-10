@@ -111,7 +111,7 @@ is printed.
 
       ~~~ swift
       /// **Creates** an instance containing `n` repetitions of `x`.
-      init(n: Int, repeatedElement x: Element)
+      init(count n: Int, repeatedElement x: Element)
       ~~~
 
     * For all other declarations, **describe what the declared entity *is***.
