@@ -31,20 +31,22 @@ is printed.
 
 ## Fundamentals
 
-* <a name="clarity-at-the-point-of-use"></a>**Clarity at the point of
-  use** is your most important goal.  Code is read far more than it is
-  written.
-
-* <a name="clarity-over-brevity"></a>**Clarity is more important than
-  brevity.**  Although Swift code can be compact, it is a *non-goal*
+* **Clarity at the point of use** is your most important goal.  
+  Code is read far more than it is written.
+  {:#clarity-at-the-point-of-use}
+  
+* **Clarity is more important than brevity.**  Although Swift
+  code can be compact, it is a *non-goal*
   to enable the smallest possible code with the fewest characters.
   Brevity in Swift code, where it occurs, is a side-effect of the
   strong type system and features that naturally reduce boilerplate.
+  {:#clarity-over-brevity}
 
-* <a name="write-doc-comment"></a>**Write a documentation comment**
+* **Write a documentation comment**
   for every declaration. Insights gained by writing documentation can
   have a profound impact on your design, so don't put it off.
-  
+  {:#write-doc-comment}
+
   <div class="warning" markdown="1">
   If you are having trouble describing your API's
   functionality in simple terms, **you may have designed the wrong API.**
@@ -215,8 +217,9 @@ is printed.
 
   {{enddetail}}
 
-* <a name="omit-needless-words"></a>**Omit needless words.** Every word in a name should convey salient
+* **Omit needless words.** Every word in a name should convey salient
   information at the use site.
+  {:#omit-needless-words}
 
   {{expand}}
   {{detail}}
@@ -248,8 +251,9 @@ is printed.
   item for details.
   {{enddetail}}
 
-* <a name="weak-type-information"></a>**Compensate for weak type information** as needed to clarify a
+* **Compensate for weak type information** as needed to clarify a
   parameter's **role**.
+  {:#weak-type-information}
 
   {{expand}}
   {{detail}}
@@ -337,9 +341,10 @@ is printed.
 
   {{enddetail}}
 
-* <a name="boolean-assertions"></a>Uses of nonmutating **Boolean
+* Uses of nonmutating **Boolean
   methods and properties should read as assertions about the
   receiver**, e.g. `x.isEmpty`, `line1.intersects(line2)`.
+  {:#boolean-assertions}
 
 * **Protocols** that describe what something **is** should read as
   nouns (e.g. `Collection`). Protocols that describe a **capability**
@@ -650,8 +655,9 @@ is printed.
     distinguished**, none should be labeled.  Well-known examples
     include `min(number1, number2)` and `zip(sequence1, sequence2)`.
 
-  * <a name="first-argument-label"></a>**When the first argument is
+  * **When the first argument is
     defaulted, it should have a distinct argument label**.
+    {:#first-argument-label}
 
     {{expand}}
     {{detail}}
