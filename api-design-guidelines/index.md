@@ -279,16 +279,18 @@ is printed.
   {:.good}
   {{enddetail}}
 
+
+### Be Grammatical
+
 * Prefer to 
-  **name methods and functions so that, when used, they form English 
+  **name methods and functions so that, when used, they form
+  grammatical English 
   phrases** having the intended semantics. For example:
   {:#methods-and-functions-read-as-phrases}
   
   ~~~swift
   ############## TODO: NEED EXAMPLES HERE ############## 
   ~~~
-
-### Be Grammatical
 
 * Uses of **functions and methods with side-effects should read as
   imperative verb phrases**, e.g., `x.reverse()`, `x.sort()`,
