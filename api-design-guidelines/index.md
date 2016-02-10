@@ -312,34 +312,35 @@ is printed.
   the same, or a similar, type as the receiver.
 
   * Prefer to name the nonmutating variant using the verb's past
-   [participle](https://en.wikipedia.org/wiki/Participle) (usually appending “ed”):
+    [participle](https://en.wikipedia.org/wiki/Participle) (usually
+    appending “ed”):
 
-   ~~~ swift
-   /// Reverses `self` in-place.
-   mutating func reverse()
+    ~~~ swift
+    /// Reverses `self` in-place.
+    mutating func reverse()
 
-   /// Returns a reversed copy of `self`.
-   func revers**ed**() -> Self
-   ...
-   x.reverse()
-   let y = x.reversed()
-   ~~~
+    /// Returns a reversed copy of `self`.
+    func revers**ed**() -> Self
+    ...
+    x.reverse()
+    let y = x.reversed()
+    ~~~
 
   * When adding “ed” is not grammatical because the verb has a direct
-   object, name the nonmutating variant using the verb's present
-   [participle](https://en.wikipedia.org/wiki/Participle), by
-   appending “ing.”:
+    object, name the nonmutating variant using the verb's present
+    [participle](https://en.wikipedia.org/wiki/Participle), by
+    appending “ing.”:
 
-   ~~~ swift
-   /// Strips all the newlines from \`self\`
-   mutating func stripNewlines()
+    ~~~ swift
+    /// Strips all the newlines from \`self\`
+    mutating func stripNewlines()
 
-   /// Returns a copy of \`self\` with all the newlines stripped.
-   func strip**ping**Newlines() -> String
-   ...
-   s.stripNewlines()
-   let oneLine = t.strippingNewlines()
-   ~~~
+    /// Returns a copy of \`self\` with all the newlines stripped.
+    func strip**ping**Newlines() -> String
+    ...
+    s.stripNewlines()
+    let oneLine = t.strippingNewlines()
+    ~~~
 
   {{enddetail}}
 
