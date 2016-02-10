@@ -653,9 +653,13 @@ is printed.
 
     ~~~ swift
     extension UInt32 {
+      /// Creates an instance having the specified `value`.
       init(**_** value: Int16)            <span class="commentary">← Widening, so no label</span>
-      init(**truncating** bits: UInt64)
-      init(**saturating** value: UInt64)
+      /// Creates an instance having the lowest 32 bits of `source`.
+      init(**truncating** source: UInt64)
+      /// Creates an instance having the nearest representable
+      /// approximation of `valueToApproximate`.
+      init(**saturating** valueToApproximate: UInt64)
     }
     ~~~
     {{enddetail}}
