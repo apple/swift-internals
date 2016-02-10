@@ -282,10 +282,11 @@ is printed.
 
 ### Be Grammatical
 
-* Uses of **mutating methods should read as imperative verb phrases**,
-  e.g., `x.reverse()`, `x.sort()`, `x.append(y)`.
+* Uses of **functions and methods with side-effects should read as
+  imperative verb phrases**, e.g., `x.reverse()`, `x.sort()`,
+  `x.append(y)`.
 
-* Uses of **nonmutating methods should read as noun phrases** when
+* Uses of **pure functions and methods should read as noun phrases** when
   possible, e.g. `x.distanceTo(y)`, `i.successor()`.
 
   {{expand}}
