@@ -279,6 +279,14 @@ is printed.
   {:.good}
   {{enddetail}}
 
+* Prefer to 
+  **name methods and functions so that, when used, they form English 
+  phrases** having the intended semantics. For example:
+  {:#methods-and-functions-read-as-phrases}
+  
+  ~~~swift
+  ############## TODO: NEED EXAMPLES HERE ############## 
+  ~~~
 
 ### Be Grammatical
 
