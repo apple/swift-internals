@@ -5,7 +5,7 @@ official_url: https://swift.org/documentation/api-design-guidelines/
 redirect_from: /documentation/api-design-guidelines.html
 ---
 <style>
-pre {
+article pre {
     overflow: visible;
 }
 </style>
@@ -191,30 +191,27 @@ is printed.
   For example, consider a method that removes the element at a
   given position within a collection.
 
-  <figure class="good" markdown="1">
   ~~~ swift
   public mutating func removeAt(position: Index) -> Element
   ~~~
-  </figure>
-
+  {:.good}
+  
   used as follows:
 
-  <figure class="good" markdown="1">
   ~~~ swift
   employees.removeAt(x)
   ~~~
-  </figure>
+  {:.good}
 
   If we were to omit the word `At` from the method name, it could
   imply to the reader that the method searches for and removes an
   element equal to `x`, rather than using `x` to indicate the
   position of the element to remove.
 
-  <figure class="bad" markdown="1">
   ~~~ swift
   employees.remove(x) // unclear: are we removing x?
   ~~~
-  </figure>
+  {:.bad}
 
   {{enddetail}}
 
@@ -228,24 +225,22 @@ is printed.
   already possesses should be omitted. In particular, omit words that
   *merely repeat* type information.
 
-  <figure class="bad" markdown="1">
   ~~~ swift
   public mutating func removeElement(member: Element) -> Element?
 
   allViews.removeElement(cancelButton)
   ~~~
-  </figure>
+  {:.bad}
 
   In this case, the word `Element` adds nothing salient at the call
   site. This API would be better:
 
-  <figure class="good" markdown="1">
   ~~~ swift
   public mutating func remove(member: Element) -> Element?
 
   allViews.remove(cancelButton) // clearer
   ~~~
-  </figure>
+  {:.good}
 
   Occasionally, repeating type information is necessary to avoid
   ambiguity, but in general it is better to use a word that
@@ -263,23 +258,21 @@ is printed.
   context at the point of use may not fully convey intent. In this
   example, the declaration may be clear, but the use site is vague.
 
-  <figure class="bad" markdown="1">
   ~~~ swift
   func add(observer: NSObject, for keyPath: String)
 
   grid.add(self, for: graphics) // vague
   ~~~
-  </figure>
+  {:.bad}
 
   To restore clarity, **precede each weakly typed parameter with a
   noun describing its role**:
 
-  <figure class="good" markdown="1">
   ~~~ swift
   func add**Observer**(_ observer: NSObject, for**KeyPath** path: String)
   grid.addObserver(self, forKeyPath: graphics) // clear
   ~~~
-  </figure>
+  {:.good}
   {{enddetail}}
 
 
@@ -468,7 +461,6 @@ is printed.
   For example, the following is encouraged, since the methods do essentially
   the same things:
 
-  <figure class="good" markdown="1">
   ~~~ swift
   extension Shape {
     /// Returns `true` iff `other` is within the area of `self`.
@@ -481,6 +473,7 @@ is printed.
     func **contains**(other: **LineSegment**) -> Bool { ... }
   }
   ~~~
+  {:.good}
 
   And since geometric types and collections are separate domains,
   this is also fine in the same program:
@@ -492,9 +485,8 @@ is printed.
     func **contains**(sought: Element) -> Bool { ... }
   }
   ~~~
-  </figure>
+  {:.good}
 
-  <figure class="bad" markdown="1">
   However, these `index` methods have different semantics, and should
   have been named differently:
 
@@ -507,6 +499,7 @@ is printed.
     func **index**(n: Int, inTable: TableID) -> TableRow { ... }
   }
   ~~~
+  {:.bad}
 
   Lastly, avoid “overloading on return type” because it causes
   ambiguities in the presence of type inference.
@@ -522,7 +515,8 @@ is printed.
     func **value**() -> String? { ... }
   }
   ~~~
-  </figure>
+  {:.bad}
+
   {{enddetail}}
 
 ### Parameters
@@ -536,26 +530,23 @@ is printed.
   Default arguments improve readability by
   hiding irrelevant information.  For example:
 
-  <figure class="bad" markdown="1">
   ~~~ swift
   let order = lastName.compare(
     royalFamilyName**, options: [], range: nil, locale: nil**)
   ~~~
-  </figure>
+  {:.bad}
 
   can become the much simpler:
 
-  <figure class="good" markdown="1">
   ~~~ swift
   let order = lastName.**compare(royalFamilyName)**
   ~~~
-  </figure>
+  {:.good}
 
   Default arguments are generally preferable to the use of method
   families, because they impose a lower cognitive burden on anyone
   trying to understand the API.
 
-  <figure class="good" markdown="1">
   ~~~ swift
   extension String {
     /// *...description...*
@@ -565,11 +556,10 @@ is printed.
     ) -> Ordering
   }
   ~~~
-  </figure>
+  {:.good}
 
   The above may not be simple, but it is much simpler than:
 
-  <figure class="bad" markdown="1">
   ~~~ swift
   extension String {
     /// *...description 1...*
@@ -585,7 +575,7 @@ is printed.
        range: Range<Index>, locale: Locale) -> Ordering
   }
   ~~~
-  </figure>
+  {:.bad}
 
   Every member of a method family needs to be separately documented
   and understood by users. To decide among them, a user needs to
@@ -631,7 +621,6 @@ is printed.
 
     {{expand}}
     {{detail}}
-    <figure class="good" markdown="1">
     ~~~
     extension String {
       // Convert `x` into its textual representation in the given radix
@@ -643,7 +632,7 @@ is printed.
     text += " and in hexadecimal, it's"
     text += **String(veryLargeNumber, radix: 16)**
     ~~~
-    </figure>
+    {:.good}
 
     In “narrowing” type conversions, though, a label that describes
     the narrowing is recommended.
@@ -667,7 +656,6 @@ is printed.
     {{expand}}
     {{detail}}
 
-    <figure class="good" markdown="1">
     ~~~ swift
     extension Document {
       func close(**completionHandler** completion: ((Bool) -> Void)? **= nil**)
@@ -675,33 +663,31 @@ is printed.
     doc1.close()
     doc2.close(completionHandler: app.quit)
     ~~~
-    </figure>
+    {:.good}
 
      As you can see, this practice makes calls read correctly regardless
      of whether the argument is passed explicitly.  If instead you
      *omit* the parameter description, the call may incorrectly imply that
      the argument is the direct object of the “sentence.”
 
-    <figure class="bad" markdown="1">
     ~~~ swift
     extension Document {
       func close(completion: ((Bool) -> Void)? **= nil**)
     }
     doc.**close(app.quit)**              <span class="commentary">← Closing the quit method?</span>
     ~~~
-    </figure>
+    {:.bad}
 
      If you attach the parameter description to the function's base
      name, it will “dangle” when the default is used.
 
-    <figure class="bad" markdown="1">
     ~~~ swift
     extension Document {
       func close**WithCompletionHandler**(completion: ((Bool) -> Void)? **= nil**)
     }
     doc.**closeWithCompletionHandler()** <span class="commentary">← What completion handler?</span>
     ~~~
-    </figure>
+    {:.bad}
 
     {{enddetail}}
 
@@ -715,7 +701,6 @@ is printed.
   {{detail}}
   For example, consider this overload set:
 
-  <figure class="bad" markdown="1">
   ~~~ swift
   struct Array<Element> {
     /// Inserts `newElement` at `self.endIndex`.
@@ -728,24 +713,22 @@ is printed.
     >(newElements: S)
   }
   ~~~
-  </figure>
+  {:.bad}
 
   These methods form a semantic family, and the argument types
   appear at first to be sharply distinct.  However, when `Element`
   is `Any`, a single element can have the same type as a sequence of
   elements.
 
-  <figure class="bad" markdown="1">
   ~~~ swift
   var values: [Any] = [1, "a"]
   values.append([2, 3, 4]) // [1, "a", [2, 3, 4]] or [1, "a", 2, 3, 4]?
   ~~~
-  </figure>
+  {:.bad}
 
   To eliminate the ambiguity, name the second overload more
   explicitly.
 
-  <figure class="good" markdown="1">
   ~~~ swift
   struct Array {
     /// Inserts `newElement` at `self.endIndex`.
@@ -758,7 +741,7 @@ is printed.
     >(newElements: S)
   }
   ~~~
-  </figure>
+  {:.good}
 
   Notice how the new name better matches the documentation comment.
   In this case, the act of writing the documentation comment

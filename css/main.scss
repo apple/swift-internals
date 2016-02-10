@@ -2,3 +2,22 @@
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
 @import url("http://swift.org/assets/stylesheets/application.css");
+// The following should be moved to the Swift.org stylesheet
+article { 
+    pre.good {
+        background: #E6FFE5;
+        border-color: #C0FFBC;
+    }
+    pre.good:before {
+        content: "✅";
+        float: right;
+    }
+    pre.bad {
+        background: #F9E2E4;
+        border-color: #F6B7BE;
+    }
+    pre.bad:before {
+        content: "⛔️";
+        float: right;
+    }
+}
