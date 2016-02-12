@@ -209,13 +209,9 @@ is printed.
   given position within a collection.
 
   ~~~ swift
-  public mutating func removeAt(position: Index) -> Element
-  ~~~
-  {:.good}
-  
-  used as follows:
-
-  ~~~ swift
+  extension List {
+    public mutating func removeAt(position: Index) -> Element
+  }
   employees.removeAt(x)
   ~~~
   {:.good}
