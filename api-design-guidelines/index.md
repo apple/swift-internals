@@ -19,9 +19,9 @@ article pre {
 # Define some variables that help us build expanding detail sections
 # without too much boilerplate.  We use checkboxes instead of 
 # <details>...</details> because it allows us to:
-# 
-# * Write CSS ensuring that details aren't hidden when printing.
-# * Add a button that expands or collapses all sections at once.
+#
+#   * Write CSS ensuring that details aren't hidden when printing.
+#   * Add a button that expands or collapses all sections at once.
 {% endcomment %}
 
 {% capture expand %}{::nomarkdown}
