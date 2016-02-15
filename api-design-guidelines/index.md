@@ -293,7 +293,7 @@ is printed.
   {{enddetail}}
 
 
-### Keep the Use Site “Fluent”
+### Make Usage Fluent
 
 * Prefer to 
   **name methods and functions so that, when used, they form
