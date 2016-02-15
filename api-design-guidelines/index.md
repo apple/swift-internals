@@ -290,7 +290,7 @@ is printed.
   {{enddetail}}
 
 
-### Be Grammatical
+### Keep the Use Site “Fluent”
 
 * Prefer to 
   **name methods and functions so that, when used, they form
