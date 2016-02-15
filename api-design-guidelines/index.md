@@ -69,7 +69,7 @@ is printed.
   have a profound impact on your design, so don't put it off.
   {:#write-doc-comment}
 
-  <div class="warning" markdown="1">
+  <div class="info" markdown="1">
   If you are having trouble describing your API's
   functionality in simple terms, **you may have designed the wrong API.**
   </div>
