@@ -298,26 +298,25 @@ is printed.
 * Prefer to 
   **name methods and functions so that, when used, they form
   grammatical English 
-  phrases** having the intended semantics. For example:
+  phrases** having the intended semantics.
   {:#methods-and-functions-read-as-phrases}
   
   ~~~swift
-  a.insert(b, at: c)          // “a, insert b at c”
-  a.subViews(havingColor: b)  // “a's subviews having color b”
-  a.capitalizingNouns()       // “a, capitalizing nouns”
+  x.insert(y, at: z)
+  x.subViews(havingColor: y)
+  x.capitalizingNouns()
   ~~~
 
+* Uses of **functions and methods without side-effects** should read as
+  noun phrases, e.g. `x.distanceTo(y)`, `i.successor()`.
+
 * Uses of **functions and methods with side-effects should read as
-  imperative verb phrases**, e.g., `x.reverse()`, `x.sort()`,
+  imperative verb phrases**, e.g., `print(x)`, `x.sort()`,
   `x.append(y)`.
 
-* Uses of **functions and methods without side-effects should read as
-  noun phrases**, e.g. `x.distanceTo(y)`, `i.successor()`.
-
-* When **a mutating method is described by a verb, name its
-  nonmutating counterpart** according to the **“ed/ing” rule**,
-  e.g. the nonmutating versions of `x.sort()` and `x.append(y)` are
-  `x.sorted()` and `x.appending(y)`.
+* Name the **nonmutating counterpart of a mutating method** according
+  to the **“ed/ing” rule**, e.g. `x.sort()`/`x.sorted()` and
+  `x.append(y)`/`x.appending(y)`.
 
   {{expand}}
   {{detail}}
