@@ -51,6 +51,12 @@ is printed.
   repeatedly.  Design APIs to make those uses clear and concise.
   {:#clarity-at-the-point-of-use}
 
+  <div class="info" markdown="1">
+  When evaluating an API, **reading a declaration is seldom
+  sufficient**; always examine a few use-cases and make sure
+  they look clear in context.
+  </div>
+  
 * **Clarity is more important than brevity.**  Although Swift
   code can be compact, it is a *non-goal*
   to enable the smallest possible code with the fewest characters.
