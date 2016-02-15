@@ -69,7 +69,6 @@ is printed.
   </div>
   
   {{expand}}
-  
   {{detail}}
   {% assign ref = 'https://developer.apple.com/library/prerelease/mac/documentation/Xcode/Reference/xcode_markup_formatting_ref/' %}
   {% capture SymbolDoc %}{{ref}}SymbolDocumentation.html#//apple_ref/doc/uid/TP40016497-CH51-{% endcapture %}
@@ -87,7 +86,6 @@ is printed.
     ~~~
 
     {{expand}}
-    
     {{detail}}
 
     * **Focus on the summary**; it's the most important part. Many
