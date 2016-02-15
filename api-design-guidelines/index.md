@@ -46,10 +46,11 @@ is printed.
 
 ## Fundamentals
 
-* **Clarity at the point of use** is your most important goal.  
-  Code is read far more than it is written.
+* **Clarity at the point of use** is your most important goal.
+  Entities such as methods and properties are declared only once, but *used*
+  repeatedly.  Design APIs to make those uses clear and concise.
   {:#clarity-at-the-point-of-use}
-  
+
 * **Clarity is more important than brevity.**  Although Swift
   code can be compact, it is a *non-goal*
   to enable the smallest possible code with the fewest characters.
