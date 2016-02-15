@@ -147,12 +147,6 @@ is printed.
     items.  Paragraphs are separated by blank lines and use complete
     sentences.
 
-    {{expand}}
-    {{detail}}
-
-    The following example shows the structure of a
-    comment that uses these features:
-
     ~~~ swift
     /// Writes the textual representation of each    <span class="graphic">←</span><span class="commentary"> Summary</span>
     /// element of `items` to the standard output.
@@ -173,6 +167,9 @@ is printed.
     public func print<Target: OutputStreamType>(
       items: Any..., separator: String = " ", terminator: String = "\n")
     ~~~
+
+    {{expand}}
+    {{detail}}
 
     * **Use recognized
       [symbol documentation markup]({{SymbolDoc}}SW1)
