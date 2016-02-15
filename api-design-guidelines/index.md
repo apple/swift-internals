@@ -458,9 +458,31 @@ is printed.
 
   {{enddetail}}
 
-* **Follow case conventions.**  Names of types, protocols and enum
-  cases are `UpperCamelCase`.  Everything else is `lowerCamelCase`.
+* **Follow case conventions.** Names of types and protocols are
+  `UpperCamelCase`.  Everything else is `lowerCamelCase`.
 
+  {{expand}}
+  {{detail}}
+
+  [Acronyms and initialisms](https://en.wikipedia.org/wiki/Acronym)
+  that commonly appear as all upper case in American English should be
+  uniformly up- or down-cased according to case conventions:
+  
+  ~~~swift
+  var **utf8**Bytes: [**UTF8**.CodeUnit];
+  var isRepresentableAs**ASCII** = true;
+  var user**SMTP**Server: Secure**SMTP**Server;
+  ~~~
+  
+  Other acronyms should be treated as ordinary words:
+  
+  ~~~swift
+  var **radar**Detector: **Radar**Scanner;
+  var enjoys**Scuba**Diving = true;
+  ~~~
+  {{enddetail}}
+
+  
 {% comment %}
 * **Be conscious of grammatical ambiguity**. Many words can act as
    either a noun or a verb, e.g. “insert,” “record,” “contract,” and
