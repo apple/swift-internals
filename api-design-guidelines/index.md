@@ -548,6 +548,46 @@ is printed.
 
 ### Parameters
 
+* **Choose parameter names to serve documentation**.
+
+  ~~~ swift
+  /// Invoke `**body**` repeatedly, passing values from `**start**` through 
+  /// `**finish - 1**`.
+  func count(from **start**: Int, to **finish**: Int, **body**: (Int)->()) {
+    for i in **start**..<**finish** { **body**(i) }
+  }
+  ~~~
+
+  {{expand}}
+  {{detail}}
+  
+  Even though parameter names do not appear at a function or method's
+  point of use, they play an important explanatory role in any API.
+  Choose these names to make documentation easy to read.  For example,
+
+  ~~~swift
+     /// Return an `Array` containing the elements of `self`
+     /// that satisfy `**predicate**`.
+     func filter(_ **predicate**: (Element) -> Bool) -> [Generator.Element]
+
+     /// Replace the given `**subRange**` of elements with `**newElements**`.
+     mutating func replaceRange(_ **subRange**: Range<Index>, with **newElements**: [E])
+  ~~~
+  {:.good}
+
+  ~~~swift
+     /// Return an `Array` containing the elements of `self`
+     /// that satisfy `**includedInResult**`.
+     func filter(_ **includedInResult**: (Element) -> Bool) -> [Generator.Element]
+
+     /// Replace the **range of elements indicated by `r`** with
+     /// the contents of `**with**`.
+     mutating func replaceRange(_ **r**: Range<Index>, **with**: [E])
+  ~~~
+  {:.bad}
+
+  {{enddetail}}
+
 * **Take advantage of defaulted arguments** when it simplifies common
   uses.  Any parameter with a single commonly-used value is a
   candidate for defaulting.
@@ -617,6 +657,8 @@ is printed.
   parameter list.  Parameters without defaults are usually more
   essential to the semantics of a method, and provide a stable initial
   pattern of use where methods are invoked.
+
+### Argument Labels
 
 * **Prefer to follow the language's defaults for the presence of
   argument labels.**
