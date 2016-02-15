@@ -299,7 +299,9 @@ is printed.
   {:#methods-and-functions-read-as-phrases}
   
   ~~~swift
-  ############## TODO: NEED EXAMPLES HERE ############## 
+  a.insert(b, at: c)          // “a, insert b at c”
+  a.subViews(havingColor: b)  // “a's subviews having color b”
+  a.capitalizingNouns()       // “a, capitalizing nouns”
   ~~~
 
 * Uses of **functions and methods with side-effects should read as
