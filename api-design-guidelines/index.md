@@ -308,18 +308,8 @@ is printed.
   imperative verb phrases**, e.g., `x.reverse()`, `x.sort()`,
   `x.append(y)`.
 
-* Uses of **pure functions and methods should read as noun phrases** when
-  possible, e.g. `x.distanceTo(y)`, `i.successor()`.
-
-  {{expand}}
-  {{detail}}
-  Imperative verbs are acceptable when there is no good alternative that
-  reads as a noun phrase:
-
-  ~~~ swift
-  let firstAndLast = fullName.split() // acceptable
-  ~~~
-  {{enddetail}}
+* Uses of **functions and methods without side-effects should read as
+  noun phrases**, e.g. `x.distanceTo(y)`, `i.successor()`.
 
 * When **a mutating method is described by a verb, name its
   nonmutating counterpart** according to the **“ed/ing” rule**,
