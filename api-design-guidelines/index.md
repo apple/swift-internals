@@ -4,7 +4,7 @@ title: API Design Guidelines
 official_url: https://swift.org/documentation/api-design-guidelines/
 redirect_from: /documentation/api-design-guidelines.html
 ---
-[comment]: # The width of <pre> elements on this page is carefully regulated, so we
+[comment]: # The width of "pre" elements on this page is carefully regulated, so we
 [comment]: # can afford to drop the scrollbar boxes.
 <style>
 article pre {
