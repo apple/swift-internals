@@ -330,17 +330,24 @@ is printed.
 
 ### Strive for Fluent Usage
 
-* Prefer to **name methods and functions so that, when used, they form
-  grammatical English phrases**
+* **Prefer names that make use sites form grammatical English phrases**
   {:#methods-and-functions-read-as-phrases}
   
   {{expand}}
   {{detail}}
   ~~~swift
-  x.insert(y, at: z)
-  x.subViews(havingColor: y)
-  x.capitalizingNouns()
+  x.insert(y, at: z)          <span class="commentary">“x, insert y at z”</span>
+  x.subViews(havingColor: y)  <span class="commentary">“x's subviews having color y”</span>
+  x.capitalizingNouns()       <span class="commentary">“x, capitalizing nouns”</span>
   ~~~
+  {:.good}
+  
+  ~~~swift
+  x.insert(y, position: z)
+  x.subViews(color: y)
+  x.nounCapitalize()
+  ~~~
+  {:.bad}
   
   It is acceptable for fluency to degrade after the first argument or
   two when those arguments are not central to the call's meaning:
@@ -353,15 +360,15 @@ is printed.
   
   {{enddetail}}
   
-* Uses of **functions and methods without side-effects should read as
+* **Uses of functions and methods without side-effects should read as
   noun phrases**, e.g. `x.distanceTo(y)`, `i.successor()`.
 
-* Uses of **functions and methods with side-effects should read as
+* **Uses of functions and methods with side-effects should read as
   imperative verb phrases**, e.g., `print(x)`, `x.sort()`,
   `x.append(y)`.
 
-* Name the **nonmutating counterpart of a mutating method** according
-  to the **“ed/ing” rule**, e.g. `x.sort()`/`x.sorted()` and
+* **Use the “ed/ing” rule** to name the nonmutating counterpart 
+  of a mutating method, e.g. `x.sort()`/`x.sorted()` and
   `x.append(y)`/`x.appending(y)`.
 
   {{expand}}
@@ -402,14 +409,16 @@ is printed.
 
   {{enddetail}}
 
-* Uses of nonmutating **Boolean
-  methods and properties should read as assertions about the
-  receiver**, e.g. `x.isEmpty`, `line1.intersects(line2)`.
+* **Uses of Boolean methods and properties should read as assertions
+  about the receiver** when the use is nonmutating, e.g. `x.isEmpty`,
+  `line1.intersects(line2)`.  
   {:#boolean-assertions}
 
-* **Protocols** that describe what something **is** should read as
-  nouns (e.g. `Collection`). Protocols that describe a **capability**
-  should be named using the suffixes `able`, `ible`, or `ing`
+* **Protocols that describe *what something is* should read as
+  nouns** (e.g. `Collection`). 
+  
+* **Protocols that describe a *capability*
+  should be named using the suffixes `able`, `ible`, or `ing`**
   (e.g. `Equatable`, `ProgressReporting`).
 
 * The names of other **types, properties, variables, and constants
