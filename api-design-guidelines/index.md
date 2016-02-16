@@ -287,6 +287,16 @@ is printed.
     func restock(from **supplier**: WidgetFactory)
   }
   ~~~
+  
+  If an associated type is so tightly bound to its protocol constraint
+  that the protocol name *is* the role, avoid collision by appending
+  `Type` to the associated type name:
+  
+  ~~~ swift
+  protocol Sequence {
+    typealias Iterator**Type** : Iterator
+  }
+  ~~~
   {:.good}
   {{enddetail}}
   
