@@ -730,18 +730,20 @@ is printed.
   {{expand}}
   {{detail}}
   An exception arises when the first two arguments represent parts of
-  a single abstraction.  In that case, begin the argument label after
-  the preposition.
+  a single abstraction.
   
   ~~~swift
-  a.fade(**fromRed:** b, **green:** c, **blue:** d)
   a.move(**toX:** b, **y:** c)
+  a.fade(**fromRed:** b, **green:** c, **blue:** d)
   ~~~
   {:.bad}
 
+  In such cases, begin the argument label *after* the preposition, to
+  keep the abstraction clear.
+  
   ~~~swift
-  a.fadeFrom(**red:** b, **green:** c, **blue:** d)
   a.moveTo(**x:** b, **y:** c)
+  a.fadeFrom(**red:** b, **green:** c, **blue:** d)
   ~~~
   {:.good}
   {{enddetail}}
