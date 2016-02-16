@@ -318,8 +318,8 @@ is printed.
   
   {{enddetail}}
   
-* Uses of **functions and methods without side-effects** should read as
-  noun phrases, e.g. `x.distanceTo(y)`, `i.successor()`.
+* Uses of **functions and methods without side-effects should read as
+  noun phrases**, e.g. `x.distanceTo(y)`, `i.successor()`.
 
 * Uses of **functions and methods with side-effects should read as
   imperative verb phrases**, e.g., `print(x)`, `x.sort()`,
@@ -352,7 +352,7 @@ is printed.
   * When adding “ed” is not grammatical because the verb has a direct
     object, name the nonmutating variant using the verb's present
     [participle](https://en.wikipedia.org/wiki/Participle), by
-    appending “ing.”:
+    appending “ing.”
 
     ~~~ swift
     /// Strips all the newlines from \`self\`
