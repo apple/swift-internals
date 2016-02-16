@@ -3,8 +3,9 @@
 This is the source for the
 [Swift Internals](http://apple.github.io/swift-internals) website,
 which hosts internal documentation for the Swift compiler and
-standard library, as well as the development version of the
-[Swift API Guidelines](https://swift.org/documentation/api-design-guidelines.html).
+standard library, as well as the
+[Swift API Guidelines](https://swift.org/documentation/api-design-guidelines.html).,
+which are automatically regenerated from [this source](https://github.com/apple/swift-internals/tree/gh-pages/api-design-guidelines).
 
 ## Local Testing and Development
 
