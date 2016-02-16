@@ -258,8 +258,39 @@ is printed.
   item for details.
   {{enddetail}}
 
-* **Compensate for weak type information** as needed to **clarify a
-  parameter's role**.
+* **Name variables, parameters, and associated types according to
+  their roles,** rather than their type constraints.
+
+  {{expand}}
+  {{detail}}
+  ~~~ swift
+  var **string** = "Hello"
+  protocol ViewController {
+    typealias **View**Type : View
+  }
+  class ProductionLine {
+    func restock(from **widgetFactory**: WidgetFactory)
+  }
+  ~~~
+  {:.bad}
+
+  Repurposing a type name in this way fails to optimize clarity and
+  expressivity. Instead, strive to choose a name that expresses the
+  entity's *role*.
+  
+  ~~~ swift
+  var **greeting** = "Hello"
+  protocol ViewController {
+    typealias **PrimaryView** : View
+  }
+  class ProductionLine {
+    func restock(from **supplier**: WidgetFactory)
+  }
+  ~~~
+  {:.good}
+  {{enddetail}}
+  
+* **Compensate for weak type information** to clarify a parameter's role.
   {:#weak-type-information}
 
   {{expand}}
