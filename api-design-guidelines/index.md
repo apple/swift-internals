@@ -293,20 +293,31 @@ is printed.
   {{enddetail}}
 
 
-### Make Usage Fluent
+### Strive for Fluent Usage
 
-* Prefer to 
-  **name methods and functions so that, when used, they form
-  grammatical English 
-  phrases** having the intended semantics.
+* Prefer to **name methods and functions so that, when used, they form
+  grammatical English phrases**
   {:#methods-and-functions-read-as-phrases}
   
+  {{expand}}
+  {{detail}}
   ~~~swift
   x.insert(y, at: z)
   x.subViews(havingColor: y)
   x.capitalizingNouns()
   ~~~
-
+  
+  It is acceptable for fluency to degrade after the first argument or
+  two when those arguments are not central to the call's meaning:
+  
+  ~~~swift
+  AudioUnit.instantiate(
+    with description, 
+    **options: [.inProcess], completionHandler: stopProgressBar**)
+  ~~~
+  
+  {{enddetail}}
+  
 * Uses of **functions and methods without side-effects** should read as
   noun phrases, e.g. `x.distanceTo(y)`, `i.successor()`.
 
