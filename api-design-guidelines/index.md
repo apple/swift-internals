@@ -266,7 +266,7 @@ is printed.
   ~~~ swift
   var **string** = "Hello"
   protocol ViewController {
-    typealias **View**Type : View
+    associatedtype **View**Type : View
   }
   class ProductionLine {
     func restock(from **widgetFactory**: WidgetFactory)
@@ -281,7 +281,7 @@ is printed.
   ~~~ swift
   var **greeting** = "Hello"
   protocol ViewController {
-    typealias **PrimaryView** : View
+    associatedtype **PrimaryView** : View
   }
   class ProductionLine {
     func restock(from **supplier**: WidgetFactory)
@@ -295,7 +295,7 @@ is printed.
   
   ~~~ swift
   protocol Sequence {
-    typealias Iterator**Type** : Iterator
+    associatedtype Iterator**Type** : Iterator
   }
   ~~~
   {{enddetail}}
