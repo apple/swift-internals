@@ -583,7 +583,7 @@ is printed.
   
   Even though parameter names do not appear at a function or method's
   point of use, they play an important explanatory role in any API.
-  Choose these names to make documentation easy to read.  For example,
+  Choose these names to make documentation easy to read.  For example:
 
   ~~~swift
      /// Return an `Array` containing the elements of `self`
