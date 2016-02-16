@@ -726,30 +726,42 @@ is printed.
 
 * **When the first argument forms part of a
   [prepositional phrase](https://en.wikipedia.org/wiki/Adpositional_phrase#Prepositional_phrases),
-  give it an argument label** beginning with the
+  give it an argument label**.  The argument label should normally begin at the
   [preposition](https://en.wikipedia.org/wiki/Preposition),
-  e.g. `x.removeBoxes(havingLength: 12)`
+  e.g. <code>x.removeBoxes(havingLength: 12). 
+  
+  {{expand}}
+  {{detail}}
+  An exception arises when the first two arguments represent parts of
+  a single abstraction.  In that case, begin the argument label after
+  the preposition.
+  
+  ~~~swift
+  a.fade(**fromRed:** b, **green:** c, **blue:** d)
+  a.move(**toX:** b, **y:** c)
+  ~~~
+  {:.bad}
 
+  ~~~swift
+  a.fadeFrom(**red:** b, **green:** c, **blue:** d)
+  a.moveTo(**x:** b, **y:** c)
+  ~~~
+  {:.good}
+  {{enddetail}}
+  
 * **Otherwise, if the first argument forms part of a grammatical
   phrase, omit its label**, appending any preceding words to the base
-  name.
+  name, e.g. `x.addSubview(y)`
 
   {{expand}}
   {{detail}}
-  ~~~swift
-  if x.meetsOrExceeds(y) { ... }
-  x.addSubview(y)
-  ~~~
-  {:.good}
-
   This guideline implies that if the first argument *doesn't* form
   part of a grammatical phrase, it should have a label.
 
   ~~~swift
   view.dismiss(**animated:** false)
   let text = words.split(**maxSplits:** 12)
-  let studentsByName = students.sorted(
-    **isOrderedBefore:** Student.namePrecedes)
+  let studentsByName = students.sorted(**isOrderedBefore:** Student.namePrecedes)
   ~~~
   {:.good}
 
@@ -758,7 +770,7 @@ is printed.
   thing.
 
   ~~~swift
-  view.dismiss(false)   <span class="commentary">Don't dismiss?</span>
+  view.dismiss(false)   <span class="commentary">Don't dismiss? Dismiss a Bool?</span>
   words.split(12)       <span class="commentary">Split the number 12?</span>
   ~~~
   {:.bad}
