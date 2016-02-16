@@ -287,6 +287,7 @@ is printed.
     func restock(from **supplier**: WidgetFactory)
   }
   ~~~
+  {:.good}
   
   If an associated type is so tightly bound to its protocol constraint
   that the protocol name *is* the role, avoid collision by appending
@@ -297,7 +298,6 @@ is printed.
     typealias Iterator**Type** : Iterator
   }
   ~~~
-  {:.good}
   {{enddetail}}
   
 * **Compensate for weak type information** to clarify a parameter's role.
