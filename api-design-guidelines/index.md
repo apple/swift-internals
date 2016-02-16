@@ -620,17 +620,8 @@ is printed.
 
 * **Choose parameter names to serve documentation**.
 
-  ~~~ swift
-  /// Invoke `**body**` repeatedly, passing values from `**start**` through 
-  /// `**finish - 1**`.
-  func count(from **start**: Int, to **finish**: Int, **body**: (Int)->()) {
-    for i in **start**..<**finish** { **body**(i) }
-  }
-  ~~~
-
   {{expand}}
   {{detail}}
-  
   Even though parameter names do not appear at a function or method's
   point of use, they play an important explanatory role in any API.
   Choose these names to make documentation easy to read.  For example:
