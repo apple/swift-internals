@@ -4,24 +4,24 @@ title: API Design Guidelines
 official_url: https://swift.org/documentation/api-design-guidelines/
 redirect_from: /documentation/api-design-guidelines.html
 ---
-{% comment %}<!-- 
+<!-- {% comment %}
 The width of <pre> elements on this page is carefully regulated, so we
 can afford to drop the scrollbar boxes. 
--->{% endcomment %}
+{% endcomment %} -->
 <style>
 article pre {
     overflow: visible;
 }
 </style>
 
-{% comment %}<!-- 
+<!-- {% comment %}
 Define some variables that help us build expanding detail sections
 without too much boilerplate.  We use checkboxes instead of 
 <details>...</details> because it allows us to:
 
   * Write CSS ensuring that details aren't hidden when printing.
   * Add a button that expands or collapses all sections at once.
--->{% endcomment %}
+{% endcomment %} -->
 {% capture expand %}{::nomarkdown}
 <input type="checkbox" class="detail">
 {:/nomarkdown}{% endcapture %}
