@@ -686,110 +686,89 @@ is printed.
 
 ### Argument Labels
 
-* **Prefer to follow the language's defaults for the presence of
-  argument labels.**
+* **Omit all labels when arguments can't be usefully distinguished**,
+  e.g. `min(number1, number2)`, `zip(sequence1, sequence2)`.
+  
+* **In initializers that perform full-width type conversions, omit the
+  first argument label**, e.g. `Int64(someUInt32)`
 
   {{expand}}
   {{detail}}
-  In other words, usually:
-
-  - First parameters to methods and functions should *not*
-    have required argument labels.
-  - Other parameters to methods and functions *should* have required
-    argument labels.
-  - All parameters to initializers should have required argument
-    labels.
-
-  The above corresponds to where the language would require argument
-  labels if each parameter was declared with the form:
+  The first argument should always be the source of the conversion.
 
   ~~~
-  **identifier**: **Type**
+  extension String {
+    // Convert `x` into its textual representation in the given radix
+    init(**_** x: BigInt, radix: Int = 10)   <span class="commentary">← Note the initial underscore</span>
+  }
+
+  text = "The value is: "
+  text += **String(veryLargeNumber)**
+  text += " and in hexadecimal, it's"
+  text += **String(veryLargeNumber, radix: 16)**
+  ~~~
+
+  In “narrowing” type conversions, though, a label that describes
+  the narrowing is recommended.
+
+  ~~~ swift
+  extension UInt32 {
+    /// Creates an instance having the specified `value`.
+    init(**_** value: Int16)            <span class="commentary">← Widening, so no label</span>
+    /// Creates an instance having the lowest 32 bits of `source`.
+    init(**truncating** source: UInt64)
+    /// Creates an instance having the nearest representable
+    /// approximation of `valueToApproximate`.
+    init(**saturating** valueToApproximate: UInt64)
+  }
   ~~~
   {{enddetail}}
 
-  There are only a few exceptions:
+* **When the first argument forms part of a
+  [prepositional phrase](https://en.wikipedia.org/wiki/Adpositional_phrase#Prepositional_phrases),
+  give it an argument label** beginning with the
+  [preposition](https://en.wikipedia.org/wiki/Preposition),
+  e.g. `x.removeBoxes(havingLength: 12)`
 
-  * **In initializers that should be seen as “full-width type
-    conversions,”** the initial argument should be the source of the
-    conversion, and should be unlabeled.
+* **Otherwise, if the first argument forms part of a grammatical
+  phrase, omit its label**, appending any preceding words to the base
+  name.
 
-    {{expand}}
-    {{detail}}
-    ~~~
-    extension String {
-      // Convert `x` into its textual representation in the given radix
-      init(**_** x: BigInt, radix: Int = 10)   <span class="commentary">← Note the initial underscore</span>
-    }
+  {{expand}}
+  {{detail}}
+  ~~~swift
+  if x.meetsOrExceeds(y) { ... }
+  x.addSubview(y)
+  ~~~
+  {:.good}
 
-    text = "The value is: "
-    text += **String(veryLargeNumber)**
-    text += " and in hexadecimal, it's"
-    text += **String(veryLargeNumber, radix: 16)**
-    ~~~
-    {:.good}
+  This guideline implies that if the first argument *doesn't* form
+  part of a grammatical phrase, it should have a label.
 
-    In “narrowing” type conversions, though, a label that describes
-    the narrowing is recommended.
+  ~~~swift
+  view.dismiss(**animated:** false)
+  let text = words.split(**maxSplits:** 12)
+  let studentsByName = students.sorted(
+    **isOrderedBefore:** Student.namePrecedes)
+  ~~~
+  {:.good}
 
-    ~~~ swift
-    extension UInt32 {
-      /// Creates an instance having the specified `value`.
-      init(**_** value: Int16)            <span class="commentary">← Widening, so no label</span>
-      /// Creates an instance having the lowest 32 bits of `source`.
-      init(**truncating** source: UInt64)
-      /// Creates an instance having the nearest representable
-      /// approximation of `valueToApproximate`.
-      init(**saturating** valueToApproximate: UInt64)
-    }
-    ~~~
-    {{enddetail}}
+  Note that it's important that the phrase convey the correct meaning.
+  The following would be grammatical but would express the wrong
+  thing.
 
-  * **When all parameters are peers that can't be usefully
-    distinguished**, none should be labeled.  Well-known examples
-    include `min(number1, number2)` and `zip(sequence1, sequence2)`.
+  ~~~swift
+  view.dismiss(false)   <span class="commentary">Don't dismiss?</span>
+  words.split(12)       <span class="commentary">Split the number 12?</span>
+  ~~~
+  {:.bad}
 
-  * **When the first argument is
-    defaulted, it should have a distinct argument label**.
-    {:#first-argument-label}
+  Note also that arguments with default values can be omitted, and
+  in that case do not form part of a grammatical phrase, so they
+  should always have labels.
+  {{enddetail}}
 
-    {{expand}}
-    {{detail}}
-
-    ~~~ swift
-    extension Document {
-      func close(**completionHandler** completion: ((Bool) -> Void)? **= nil**)
-    }
-    doc1.close()
-    doc2.close(completionHandler: app.quit)
-    ~~~
-    {:.good}
-
-     As you can see, this practice makes calls read correctly regardless
-     of whether the argument is passed explicitly.  If instead you
-     *omit* the parameter description, the call may incorrectly imply that
-     the argument is the direct object of the “sentence.”
-
-    ~~~ swift
-    extension Document {
-      func close(completion: ((Bool) -> Void)? **= nil**)
-    }
-    doc.**close(app.quit)**              <span class="commentary">← Closing the quit method?</span>
-    ~~~
-    {:.bad}
-
-     If you attach the parameter description to the function's base
-     name, it will “dangle” when the default is used.
-
-    ~~~ swift
-    extension Document {
-      func close**WithCompletionHandler**(completion: ((Bool) -> Void)? **= nil**)
-    }
-    doc.**closeWithCompletionHandler()** <span class="commentary">← What completion handler?</span>
-    ~~~
-    {:.bad}
-
-    {{enddetail}}
+* **Label all other arguments**.
 
 ## Special Instructions
 
