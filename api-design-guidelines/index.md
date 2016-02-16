@@ -722,7 +722,7 @@ is printed.
   [prepositional phrase](https://en.wikipedia.org/wiki/Adpositional_phrase#Prepositional_phrases),
   give it an argument label**.  The argument label should normally begin at the
   [preposition](https://en.wikipedia.org/wiki/Preposition),
-  e.g. <code>x.removeBoxes(havingLength: 12). 
+  e.g. `x.removeBoxes(havingLength: 12)`. 
   
   {{expand}}
   {{detail}}
