@@ -47,15 +47,12 @@ is printed.
 ## Fundamentals
 
 * **Clarity at the point of use** is your most important goal.
-  Entities such as methods and properties are declared only once, but *used*
-  repeatedly.  Design APIs to make those uses clear and concise.
+  Entities such as methods and properties are declared only once, but
+  *used* repeatedly.  Design APIs to make those uses clear and
+  concise.  When evaluating a design, reading a declaration is seldom
+  sufficient; always examine a use case to make sure it looks
+  clear in context.
   {:#clarity-at-the-point-of-use}
-
-  <div class="info" markdown="1">
-  When evaluating an API, **reading a declaration is seldom
-  sufficient**; always examine a few use-cases and make sure
-  they look clear in context.
-  </div>
   
 * **Clarity is more important than brevity.**  Although Swift
   code can be compact, it is a *non-goal*
@@ -69,7 +66,7 @@ is printed.
   have a profound impact on your design, so don't put it off.
   {:#write-doc-comment}
 
-  <div class="info" markdown="1">
+  <div class="warning" markdown="1">
   If you are having trouble describing your API's
   functionality in simple terms, **you may have designed the wrong API.**
   </div>
