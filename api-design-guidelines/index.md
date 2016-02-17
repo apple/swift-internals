@@ -618,13 +618,14 @@ is printed.
 
 ### Parameters
 
-* **Choose parameter names to serve documentation**.
+* **Choose parameter names to serve documentation**. Even though
+  parameter names do not appear at a function or method's point of
+  use, they play an important explanatory role.
 
   {{expand}}
   {{detail}}
-  Even though parameter names do not appear at a function or method's
-  point of use, they play an important explanatory role in any API.
-  Choose these names to make documentation easy to read.  For example:
+  Choose these names to make documentation easy to read.  For example,
+  these names make documentation read naturally:
 
   ~~~swift
      /// Return an `Array` containing the elements of `self`
@@ -636,6 +637,8 @@ is printed.
   ~~~
   {:.good}
 
+  These, however, make the documentation awkward and ungrammatical:
+  
   ~~~swift
      /// Return an `Array` containing the elements of `self`
      /// that satisfy `**includedInResult**`.
