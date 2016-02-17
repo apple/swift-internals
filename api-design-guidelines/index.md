@@ -656,6 +656,11 @@ is printed.
   {{enddetail}}
 
 ### Parameters
+{:#parameter-names}
+
+~~~swift
+func move(from **start**: Point, to **end**: Point)
+~~~
 
 * **Choose parameter names to serve documentation**. Even though
   parameter names do not appear at a function or method's point of
@@ -691,9 +696,9 @@ is printed.
 
   {{enddetail}}
 
-* **Take advantage of defaulted arguments** when it simplifies common
+* **Take advantage of defaulted parameters** when it simplifies common
   uses.  Any parameter with a single commonly-used value is a
-  candidate for defaulting.
+  candidate for a default.
 
   {{expand}}
   {{detail}}
@@ -762,6 +767,11 @@ is printed.
   pattern of use where methods are invoked.
 
 ### Argument Labels
+
+~~~swift
+func move(**from** start: Point, **to** end: Point)
+x.move(**from:** x, **to:** y) 
+~~~
 
 * **Omit all labels when arguments can't be usefully distinguished**,
   e.g. `min(number1, number2)`, `zip(sequence1, sequence2)`.
