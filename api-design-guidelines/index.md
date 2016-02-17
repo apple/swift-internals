@@ -93,7 +93,9 @@ is printed.
       great summary.
 
     * **Use a single sentence fragment** if possible, ending with a
-      period.  Do not use a complete sentence.
+      period.  Do not use a complete sentence.  A summary is like 
+      a dictionary definition; it is shown in the context of the 
+      API it describes.
 
     * **Describe what a function or method *does* and what it
       *returns***, omitting null effects and `Void` returns:
