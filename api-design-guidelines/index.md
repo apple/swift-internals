@@ -44,7 +44,7 @@ is printed.
 ## Fundamentals
 
 * **Clarity at the point of use** is your most important goal.
-  Entities such as methods and properties are declared only once, but
+  Entities such as methods and properties are declared only once but
   *used* repeatedly.  Design APIs to make those uses clear and
   concise.  When evaluating a design, reading a declaration is seldom
   sufficient; always examine a use case to make sure it looks
