@@ -864,6 +864,33 @@ is printed.
 
 ## Special Instructions
 
+* **Label closure parameters and the tuple members** where they
+  appear in your API.
+  
+  {{expand}}
+  {{detail}}
+  While these names don't have any force in the Swift type system,
+  they have explanatory power and can be referenced from documentation
+  comments.
+  
+  ~~~ swift
+  /// Ensure that we hold uniquely-referenced storage for at least
+  /// `requestedCapacity` elements.
+  ///
+  /// If more storage is needed, `allocator` is called with
+  /// the number of maximally-aligned `**bytes**` to allocate.
+  ///
+  /// - Returns:
+  ///   - **reallocated**: `true` iff a new block of memory
+  ///     was allocated.
+  ///   - **capacityChanged**: `true` iff `capacity` was updated.
+  mutating func ensureUniqueStorage(
+    minimumCapacity requestedCapacity: Int, 
+    allocator: (**bytes:** Int)->UnsafePointer<Void>
+  ) -> (**reallocated:** Bool, **capacityChanged:** Bool)
+  ~~~
+  {{enddetail}}
+  
 * **Take extra care with unconstrained polymorphism** (e.g. `Any`,
   `AnyObject`, and unconstrained generic parameters) to avoid
   ambiguities in overload sets.
