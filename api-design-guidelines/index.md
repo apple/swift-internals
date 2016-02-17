@@ -869,16 +869,17 @@ is printed.
   
   {{expand}}
   {{detail}}
-  While these names don't have any force in the Swift type system,
-  they have explanatory power and can be referenced from documentation
-  comments.
+  These names have
+  explanatory power, can be referenced from documentation comments,
+  and provide expressive access to tuple members.
   
   ~~~ swift
   /// Ensure that we hold uniquely-referenced storage for at least
   /// `requestedCapacity` elements.
   ///
-  /// If more storage is needed, `allocator` is called with
-  /// the number of maximally-aligned `**bytes**` to allocate.
+  /// If more storage is needed, `allocate` is called with
+  /// **`byteCount`** equal to the the number of maximally-aligned
+  /// bytes to allocate.
   ///
   /// - Returns:
   ///   - **reallocated**: `true` iff a new block of memory
@@ -886,8 +887,19 @@ is printed.
   ///   - **capacityChanged**: `true` iff `capacity` was updated.
   mutating func ensureUniqueStorage(
     minimumCapacity requestedCapacity: Int, 
-    allocator: (**bytes:** Int)->UnsafePointer<Void>
+    allocate: (**byteCount:** Int)->UnsafePointer<Void>
   ) -> (**reallocated:** Bool, **capacityChanged:** Bool)
+  ~~~
+  
+  Although when used in closures they are technically
+  [argument labels](#argument-labels), you should choose these labels
+  and use them in documentation *as though* they were
+  [parameter names](#parameter-names).  A call to the closure in the
+  function body will read consistently with a function whose phrase
+  starting in the base name does not include the first argument:
+  
+  ~~~ swift
+  allocate(byteCount: newCount * elementSize)
   ~~~
   {{enddetail}}
 
