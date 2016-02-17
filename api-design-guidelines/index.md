@@ -281,7 +281,7 @@ is printed.
   ~~~ swift
   var **greeting** = "Hello"
   protocol ViewController {
-    associatedtype **PrimaryView** : View
+    associatedtype **ContentView** : View
   }
   class ProductionLine {
     func restock(from **supplier**: WidgetFactory)
