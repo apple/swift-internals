@@ -355,7 +355,7 @@ is printed.
   
   ~~~swift
   AudioUnit.instantiate(
-    with description, 
+    with: description, 
     **options: [.inProcess], completionHandler: stopProgressBar**)
   ~~~
   {{enddetail}}
