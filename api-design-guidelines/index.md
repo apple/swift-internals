@@ -330,11 +330,12 @@ is printed.
 
 ### Strive for Fluent Usage
 
-* **Prefer names that make use sites form grammatical English phrases**
+* **Prefer names of function and other methods that make use sites form
+  grammatical English phrases.** 
   {:#methods-and-functions-read-as-phrases}
   
   {{expand}}
-  {{detail}}
+  {{detail}}  
   ~~~swift
   x.insert(y, at: z)          <span class="commentary">“x, insert y at z”</span>
   x.subViews(havingColor: y)  <span class="commentary">“x's subviews having color y”</span>
@@ -357,57 +358,95 @@ is printed.
     with description, 
     **options: [.inProcess], completionHandler: stopProgressBar**)
   ~~~
-  
   {{enddetail}}
+
+* **Begin names of factory methods with “`make`”,**
+  e.g. `x.makeIterator()`.
+
+* **Initializer and
+  [factory methods](https://en.wikipedia.org/wiki/Factory_method_pattern) calls**
+  should form a phrase that does not include the first argument,
+  e.g. `x.makeWidget(cogCount: 47)`
   
-* **Uses of functions and methods without side-effects should read as
-  noun phrases**, e.g. `x.distanceTo(y)`, `i.successor()`.
-
-* **Uses of functions and methods with side-effects should read as
-  imperative verb phrases**, e.g., `print(x)`, `x.sort()`,
-  `x.append(y)`.
-
-* **Use the “ed/ing” rule** to name the nonmutating counterpart 
-  of a mutating method, e.g. `x.sort()`/`x.sorted()` and
-  `x.append(y)`/`x.appending(y)`.
-
   {{expand}}
   {{detail}}
-  Often, a mutating method will have a nonmutating variant returning
-  the same, or a similar, type as the receiver.
+  For example, the phrases implied by these calls do not include the
+  first argument:
+  
+  ~~~swift
+  let foreground = **Color**(red: 32, green: 64, blue: 128)
+  let newPart = **factory.makeWidget**(gears: 42, spindles: 14)
+  ~~~
+  {:.good}
+  
+  In the following, the API author has tried to create grammatical
+  continuity with the first argument.
+  
+  ~~~swift
+  let foreground = **Color(havingRGBValuesRed: 32, green: 64, andBlue: 128)**
+  let newPart = **factory.makeWidget(havingGearCount: 42, andSpindleCount: 14)**
+  ~~~
+  {:.bad}
 
-  * Prefer to name the nonmutating variant using the verb's past
-    [participle](https://en.wikipedia.org/wiki/Participle) (usually
-    appending “ed”):
+  In practice, this guideline along with those for
+  [argument labels](#argument-labels) means the first argument will
+  have a label unless the call is performing a
+  [full-width type conversion](#type-conversion).
 
-    ~~~ swift
-    /// Reverses `self` in-place.
-    mutating func reverse()
-
-    /// Returns a reversed copy of `self`.
-    func revers**ed**() -> Self
-    ...
-    x.reverse()
-    let y = x.reversed()
-    ~~~
-
-  * When adding “ed” is not grammatical because the verb has a direct
-    object, name the nonmutating variant using the verb's present
-    [participle](https://en.wikipedia.org/wiki/Participle), by
-    appending “ing.”
-
-    ~~~ swift
-    /// Strips all the newlines from \`self\`
-    mutating func stripNewlines()
-
-    /// Returns a copy of \`self\` with all the newlines stripped.
-    func strip**ping**Newlines() -> String
-    ...
-    s.stripNewlines()
-    let oneLine = t.strippingNewlines()
-    ~~~
-
+  ~~~swift
+  let rgbForeground = RGBColor(cmykForeground)
+  ~~~
   {{enddetail}}
+
+* **Name functions and methods according to their side-effects**
+
+  * Those without side-effects should read as noun phrases,
+    e.g. `x.distanceTo(y)`, `i.successor()`.
+  
+  * Those with side-effects should read as imperative verb phrases,
+    e.g., `print(x)`, `x.sort()`, `x.append(y)`.
+
+  * Use the “ed/ing” rule to name the nonmutating counterpart 
+    of a mutating method, e.g. `x.sort()`/`x.sorted()` and
+    `x.append(y)`/`x.appending(y)`.
+
+    {{expand}}
+    {{detail}}
+    Often, a mutating method will have a nonmutating variant returning
+    the same, or a similar, type as the receiver.
+
+    * Prefer to name the nonmutating variant using the verb's past
+      [participle](https://en.wikipedia.org/wiki/Participle) (usually
+      appending “ed”):
+
+      ~~~ swift
+      /// Reverses `self` in-place.
+      mutating func reverse()
+
+      /// Returns a reversed copy of `self`.
+      func revers**ed**() -> Self
+      ...
+      x.reverse()
+      let y = x.reversed()
+      ~~~
+
+    * When adding “ed” is not grammatical because the verb has a direct
+      object, name the nonmutating variant using the verb's present
+      [participle](https://en.wikipedia.org/wiki/Participle), by
+      appending “ing.”
+
+      ~~~ swift
+      /// Strips all the newlines from \`self\`
+      mutating func stripNewlines()
+
+      /// Returns a copy of \`self\` with all the newlines stripped.
+      func strip**ping**Newlines() -> String
+      ...
+      s.stripNewlines()
+      let oneLine = t.strippingNewlines()
+      ~~~
+
+    {{enddetail}}
 
 * **Uses of Boolean methods and properties should read as assertions
   about the receiver** when the use is nonmutating, e.g. `x.isEmpty`,
@@ -729,7 +768,8 @@ is printed.
   
 * **In initializers that perform full-width type conversions, omit the
   first argument label**, e.g. `Int64(someUInt32)`
-
+  {:#type-conversion}
+  
   {{expand}}
   {{detail}}
   The first argument should always be the source of the conversion.
