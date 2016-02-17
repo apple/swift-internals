@@ -589,8 +589,8 @@ is printed.
    your API.
 {% endcomment %}
 
-* **Methods can share a base name** when they share the same basic meaning
-  but operate on different types, or when they are in different domains.
+* **Methods can share a base name** when they share the same basic
+  meaning or when they operate in distinct domains.
 
   {{expand}}
   {{detail}}
@@ -890,7 +890,7 @@ is printed.
   ) -> (**reallocated:** Bool, **capacityChanged:** Bool)
   ~~~
   {{enddetail}}
-  
+
 * **Take extra care with unconstrained polymorphism** (e.g. `Any`,
   `AnyObject`, and unconstrained generic parameters) to avoid
   ambiguities in overload sets.
