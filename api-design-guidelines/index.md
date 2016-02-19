@@ -330,7 +330,7 @@ is printed.
 
 ### Strive for Fluent Usage
 
-* **Prefer names of function and other methods that make use sites form
+* **Prefer method and function names that make use sites form
   grammatical English phrases.** 
   {:#methods-and-functions-read-as-phrases}
   
@@ -364,7 +364,7 @@ is printed.
   e.g. `x.makeIterator()`.
 
 * **Initializer and
-  [factory methods](https://en.wikipedia.org/wiki/Factory_method_pattern) calls**
+  [factory method](https://en.wikipedia.org/wiki/Factory_method_pattern) calls**
   should form a phrase that does not include the first argument,
   e.g. `x.makeWidget(cogCount: 47)`
   
@@ -874,7 +874,7 @@ x.move(**from:** x, **to:** y)
 
 ## Special Instructions
 
-* **Label closure parameters and the tuple members** where they
+* **Label closure parameters and tuple members** where they
   appear in your API.
   
   {{expand}}
@@ -888,7 +888,7 @@ x.move(**from:** x, **to:** y)
   /// `requestedCapacity` elements.
   ///
   /// If more storage is needed, `allocate` is called with
-  /// **`byteCount`** equal to the the number of maximally-aligned
+  /// **`byteCount`** equal to the number of maximally-aligned
   /// bytes to allocate.
   ///
   /// - Returns:
