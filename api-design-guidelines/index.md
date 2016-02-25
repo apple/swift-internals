@@ -206,9 +206,9 @@ is printed.
 
   ~~~ swift
   extension List {
-    public mutating func removeAt(position: Index) -> Element
+    public mutating func remove(at position: Index) -> Element
   }
-  employees.removeAt(x)
+  employees.remove(at: x)
   ~~~
   {:.good}
 
@@ -402,7 +402,7 @@ is printed.
 * **Name functions and methods according to their side-effects**
 
   * Those without side-effects should read as noun phrases,
-    e.g. `x.distanceTo(y)`, `i.successor()`.
+    e.g. `x.distance(to: y)`, `i.successor()`.
   
   * Those with side-effects should read as imperative verb phrases,
     e.g., `print(x)`, `x.sort()`, `x.append(y)`.
@@ -756,7 +756,7 @@ func move(from **start**: Point, to **end**: Point)
   Every member of a method family needs to be separately documented
   and understood by users. To decide among them, a user needs to
   understand all of them, and occasional surprising relationships—for
-  example, `fooWithBar(nil)` and `foo()` aren't always synonyms—make
+  example, `foo(bar: nil)` and `foo()` aren't always synonyms—make
   this a tedious process of ferreting out minor differences in
   mostly identical documentation.  Using a single method with
   defaults provides a vastly superior programmer experience.
@@ -957,9 +957,9 @@ x.move(**from:** x, **to:** y)
 
     /// Inserts the contents of `newElements`, in order, at
     /// `self.endIndex`.
-    public mutating func appendContentsOf<
+    public mutating func append<
       S : SequenceType where S.Generator.Element == Element
-    >(newElements: S)
+    >(**contentsOf** newElements: S)
   }
   ~~~
   {:.good}
