@@ -367,7 +367,8 @@ is printed.
   [factory method](https://en.wikipedia.org/wiki/Factory_method_pattern) calls**
   should form a phrase that does not include the first argument,
   e.g. `x.makeWidget(cogCount: 47)`
-  
+  {:#init-factory-no-phrase}
+
   {{expand}}
   {{detail}}
   For example, the phrases implied by these calls do not include the
