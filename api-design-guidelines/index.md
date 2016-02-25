@@ -673,25 +673,25 @@ func move(from **start**: Point, to **end**: Point)
   these names make documentation read naturally:
 
   ~~~swift
-     /// Return an `Array` containing the elements of `self`
-     /// that satisfy `**predicate**`.
-     func filter(_ **predicate**: (Element) -> Bool) -> [Generator.Element]
+  /// Return an `Array` containing the elements of `self`
+  /// that satisfy `**predicate**`.
+  func filter(_ **predicate**: (Element) -> Bool) -> [Generator.Element]
 
-     /// Replace the given `**subRange**` of elements with `**newElements**`.
-     mutating func replaceRange(_ **subRange**: Range<Index>, with **newElements**: [E])
+  /// Replace the given `**subRange**` of elements with `**newElements**`.
+  mutating func replaceRange(_ **subRange**: Range<Index>, with **newElements**: [E])
   ~~~
   {:.good}
 
   These, however, make the documentation awkward and ungrammatical:
   
   ~~~swift
-     /// Return an `Array` containing the elements of `self`
-     /// that satisfy `**includedInResult**`.
-     func filter(_ **includedInResult**: (Element) -> Bool) -> [Generator.Element]
+  /// Return an `Array` containing the elements of `self`
+  /// that satisfy `**includedInResult**`.
+  func filter(_ **includedInResult**: (Element) -> Bool) -> [Generator.Element]
 
-     /// Replace the **range of elements indicated by `r`** with
-     /// the contents of `**with**`.
-     mutating func replaceRange(_ **r**: Range<Index>, **with**: [E])
+  /// Replace the **range of elements indicated by `r`** with
+  /// the contents of `**with**`.
+  mutating func replaceRange(_ **r**: Range<Index>, **with**: [E])
   ~~~
   {:.bad}
 
