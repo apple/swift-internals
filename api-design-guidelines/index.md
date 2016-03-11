@@ -212,7 +212,7 @@ is printed.
   ~~~
   {:.good}
 
-  If we were to omit the word `At` from the method name, it could
+  If we were to omit the word `at` from the method signature, it could
   imply to the reader that the method searches for and removes an
   element equal to `x`, rather than using `x` to indicate the
   position of the element to remove.
