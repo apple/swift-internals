@@ -457,7 +457,7 @@ is printed.
 
       {{enddetail}}
 
-    * When the operation is **naturally described by a noun**, use
+    * When the operation is **naturally described by a noun**, use the
       noun for the nonmutating method and apply the “form” prefix to
       name its mutating counterpart.
 
