@@ -569,16 +569,16 @@ is printed.
   uniformly up- or down-cased according to case conventions:
   
   ~~~swift
-  var **utf8**Bytes: [**UTF8**.CodeUnit];
-  var isRepresentableAs**ASCII** = true;
-  var user**SMTP**Server: Secure**SMTP**Server;
+  var **utf8**Bytes: [**UTF8**.CodeUnit]
+  var isRepresentableAs**ASCII** = true
+  var user**SMTP**Server: Secure**SMTP**Server
   ~~~
   
   Other acronyms should be treated as ordinary words:
   
   ~~~swift
-  var **radar**Detector: **Radar**Scanner;
-  var enjoys**Scuba**Diving = true;
+  var **radar**Detector: **Radar**Scanner
+  var enjoys**Scuba**Diving = true
   ~~~
   {{enddetail}}
 
@@ -898,7 +898,7 @@ x.move(**from:** x, **to:** y)
   ///   - **capacityChanged**: `true` iff `capacity` was updated.
   mutating func ensureUniqueStorage(
     minimumCapacity requestedCapacity: Int, 
-    allocate: (**byteCount:** Int)->UnsafePointer<Void>
+    allocate: (**byteCount:** Int) -> UnsafePointer&lt;Void&gt;
   ) -> (**reallocated:** Bool, **capacityChanged:** Bool)
   ~~~
   
