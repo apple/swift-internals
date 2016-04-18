@@ -407,47 +407,64 @@ is printed.
   * Those with side-effects should read as imperative verb phrases,
     e.g., `print(x)`, `x.sort()`, `x.append(y)`.
 
-  * Use the “ed/ing” rule to name the nonmutating counterpart 
-    of a mutating method, e.g. `x.sort()`/`x.sorted()` and
-    `x.append(y)`/`x.appending(y)`.
+  * **Name Mutating/nonmutating method pairs** consistently.
+    A mutating method will often have a nonmutating variant with
+    similar semantics, but that returns a new value rather than
+    updating an instance in-place.
+    
+    * When the operation is **naturally described by a verb**, use the
+      verb's imperative for the mutating method and apply the “ed” or
+      “ing” suffix to name its nonmutating counterpart.
+      
+      |Mutating|Nonmutating|
+      |-
+      |`x.sort()`|`z = x.sorted()`|
+      |`x.append(y)`|`z = x.appending(y)`|
+      
+      {{expand}}
+      {{detail}}
 
-    {{expand}}
-    {{detail}}
-    Often, a mutating method will have a nonmutating variant returning
-    the same, or a similar, type as the receiver.
+      * Prefer to name the nonmutating variant using the verb's past
+        [participle](https://en.wikipedia.org/wiki/Participle) (usually
+        appending “ed”):
 
-    * Prefer to name the nonmutating variant using the verb's past
-      [participle](https://en.wikipedia.org/wiki/Participle) (usually
-      appending “ed”):
+        ~~~ swift
+        /// Reverses `self` in-place.
+        mutating func reverse()
 
-      ~~~ swift
-      /// Reverses `self` in-place.
-      mutating func reverse()
+        /// Returns a reversed copy of `self`.
+        func revers**ed**() -> Self
+        ...
+        x.reverse()
+        let y = x.reversed()
+        ~~~
 
-      /// Returns a reversed copy of `self`.
-      func revers**ed**() -> Self
-      ...
-      x.reverse()
-      let y = x.reversed()
-      ~~~
+      * When adding “ed” is not grammatical because the verb has a direct
+        object, name the nonmutating variant using the verb's present
+        [participle](https://en.wikipedia.org/wiki/Participle), by
+        appending “ing.”
 
-    * When adding “ed” is not grammatical because the verb has a direct
-      object, name the nonmutating variant using the verb's present
-      [participle](https://en.wikipedia.org/wiki/Participle), by
-      appending “ing.”
+        ~~~ swift
+        /// Strips all the newlines from `self`
+        mutating func stripNewlines()
 
-      ~~~ swift
-      /// Strips all the newlines from \`self\`
-      mutating func stripNewlines()
+        /// Returns a copy of `self` with all the newlines stripped.
+        func strip**ping**Newlines() -> String
+        ...
+        s.stripNewlines()
+        let oneLine = t.strippingNewlines()
+        ~~~
 
-      /// Returns a copy of \`self\` with all the newlines stripped.
-      func strip**ping**Newlines() -> String
-      ...
-      s.stripNewlines()
-      let oneLine = t.strippingNewlines()
-      ~~~
+      {{enddetail}}
 
-    {{enddetail}}
+    * When the operation is **naturally described by a noun**, use the
+      noun for the nonmutating method and apply the “form” prefix to
+      name its mutating counterpart.
+
+      |Nonmutating|Mutating|
+      |-
+      |`x = y.union(z)`|`y.formUnion(z)`|
+      |`j = c.successor(i)`|`c.formSuccessor(&i)`|
 
 * **Uses of Boolean methods and properties should read as assertions
   about the receiver** when the use is nonmutating, e.g. `x.isEmpty`,
