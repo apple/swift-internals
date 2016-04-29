@@ -198,6 +198,7 @@ is printed.
 
 * **Include all the words needed to avoid ambiguity** for a person
   reading code where the name is used.
+  {:#include-words-to-avoid-ambiguity}
 
   {{expand}}
   {{detail}}
@@ -260,6 +261,7 @@ is printed.
 
 * **Name variables, parameters, and associated types according to
   their roles,** rather than their type constraints.
+  {:#name-according-to-roles}
 
   {{expand}}
   {{detail}}
@@ -362,6 +364,7 @@ is printed.
 
 * **Begin names of factory methods with “`make`”,**
   e.g. `x.makeIterator()`.
+  {:#begin-factory-name-with-make}
 
 * **Initializer and
   [factory method](https://en.wikipedia.org/wiki/Factory_method_pattern) calls**
@@ -400,6 +403,7 @@ is printed.
   {{enddetail}}
 
 * **Name functions and methods according to their side-effects**
+  {:#name-according-to-side-effects}
 
   * Those without side-effects should read as noun phrases,
     e.g. `x.distance(to: y)`, `i.successor()`.
@@ -468,18 +472,21 @@ is printed.
 
 * **Uses of Boolean methods and properties should read as assertions
   about the receiver** when the use is nonmutating, e.g. `x.isEmpty`,
-  `line1.intersects(line2)`.  
+  `line1.intersects(line2)`.
   {:#boolean-assertions}
 
 * **Protocols that describe *what something is* should read as
-  nouns** (e.g. `Collection`). 
-  
+  nouns** (e.g. `Collection`).
+  {:#protocols-describing-what-is-should-read-as-nouns}
+
 * **Protocols that describe a *capability*
   should be named using the suffixes `able`, `ible`, or `ing`**
   (e.g. `Equatable`, `ProgressReporting`).
+  {:#protocols-describing-capability-should-use-suffixes}
 
 * The names of other **types, properties, variables, and constants
   should read as nouns.**
+  {:#name-of-others-should-read-as-nouns}
 
 ### Use Terminology Well
 
@@ -491,8 +498,10 @@ is printed.
   as well.  Don't say “epidermis” if “skin” will serve your purpose.
   Terms of art are an essential communication tool, but should only be
   used to capture crucial meaning that would otherwise be lost.
+  {:#avoid-obscure-terms}
 
 * **Stick to the established meaning** if you do use a term of art.
+  {:#stick-to-established-meaning}
 
   {{expand}}
   {{detail}}
@@ -504,20 +513,24 @@ is printed.
   * **Don't surprise an expert**: anyone already familiar with the term
     will be surprised and probably angered if we appear to have
     invented a new meaning for it.
+    {:#do-not-surprise-an-expert}
 
   * **Don't confuse a beginner**: anyone trying to learn the term is
     likely to do a web search and find its traditional meaning.
+    {:#do-not-confuse-a-beginner}
   {{enddetail}}
 
 * **Avoid abbreviations.** Abbreviations, especially non-standard
   ones, are effectively terms-of-art, because understanding depends on
   correctly translating them into their non-abbreviated forms.
+  {:#avoid-abbreviations}
 
   > The intended meaning for any abbreviation you use should be
   > easily found by a web search.
 
 * **Embrace precedent.** Don't optimize terms for the total beginner
   at the expense of conformance to existing culture.
+  {:#embrace-precedent}
 
   {{expand}}
   {{detail}}
@@ -548,9 +561,11 @@ is printed.
   significant computation, because they have stored properties as a
   mental model. Be sure to alert them when that assumption may be
   violated.
+  {:#document-computed-property-complexity}
 
 * **Prefer methods and properties to free functions.**  Free functions
   are used only in special cases:
+  {:#prefer-method-and-properties-to-functions}
 
   {{expand}}
   {{detail}}
@@ -577,6 +592,7 @@ is printed.
 
 * **Follow case conventions.** Names of types and protocols are
   `UpperCamelCase`.  Everything else is `lowerCamelCase`.
+  {:#follow-case-conventions}
 
   {{expand}}
   {{detail}}
@@ -605,10 +621,12 @@ is printed.
    either a noun or a verb, e.g. “insert,” “record,” “contract,” and
    “drink.”  Consider how these dual roles may affect the clarity of
    your API.
+  {:#be-conscious-of-grammatical-ambiguity}
 {% endcomment %}
 
 * **Methods can share a base name** when they share the same basic
   meaning or when they operate in distinct domains.
+  {:#similar-methods-can-share-a-base-name}
 
   {{expand}}
   {{detail}}
@@ -683,6 +701,7 @@ func move(from **start**: Point, to **end**: Point)
 * **Choose parameter names to serve documentation**. Even though
   parameter names do not appear at a function or method's point of
   use, they play an important explanatory role.
+  {:#choose-parameter-names-to-serve-doc}
 
   {{expand}}
   {{detail}}
@@ -717,6 +736,7 @@ func move(from **start**: Point, to **end**: Point)
 * **Take advantage of defaulted parameters** when it simplifies common
   uses.  Any parameter with a single commonly-used value is a
   candidate for a default.
+  {:#take-advantage-of-defaulted-parameters}
 
   {{expand}}
   {{detail}}
@@ -783,6 +803,7 @@ func move(from **start**: Point, to **end**: Point)
   parameter list.  Parameters without defaults are usually more
   essential to the semantics of a method, and provide a stable initial
   pattern of use where methods are invoked.
+  {:#parameter-with-defaults-towards-the-end}
 
 ### Argument Labels
 
@@ -793,6 +814,7 @@ x.move(**from:** x, **to:** y)
 
 * **Omit all labels when arguments can't be usefully distinguished**,
   e.g. `min(number1, number2)`, `zip(sequence1, sequence2)`.
+  {:#no-labels-for-indistinguishable-arguments}
   
 * **In initializers that perform full-width type conversions, omit the
   first argument label**, e.g. `Int64(someUInt32)`
@@ -834,7 +856,8 @@ x.move(**from:** x, **to:** y)
   [prepositional phrase](https://en.wikipedia.org/wiki/Adpositional_phrase#Prepositional_phrases),
   give it an argument label**.  The argument label should normally begin at the
   [preposition](https://en.wikipedia.org/wiki/Preposition),
-  e.g. `x.removeBoxes(havingLength: 12)`. 
+  e.g. `x.removeBoxes(havingLength: 12)`.
+  {:#give-prepositional-phrase-argument-label}
   
   {{expand}}
   {{detail}}
@@ -860,6 +883,7 @@ x.move(**from:** x, **to:** y)
 * **Otherwise, if the first argument forms part of a grammatical
   phrase, omit its label**, appending any preceding words to the base
   name, e.g. `x.addSubview(y)`
+  {:#omit-first-argument-if-partial-phrase}
 
   {{expand}}
   {{detail}}
@@ -894,6 +918,7 @@ x.move(**from:** x, **to:** y)
 
 * **Label closure parameters and tuple members** where they
   appear in your API.
+  {:#label-closure-parameters}
   
   {{expand}}
   {{detail}}
@@ -934,6 +959,7 @@ x.move(**from:** x, **to:** y)
 * **Take extra care with unconstrained polymorphism** (e.g. `Any`,
   `AnyObject`, and unconstrained generic parameters) to avoid
   ambiguities in overload sets.
+  {:#unconstrained-polymorphism}
 
   {{expand}}
   {{detail}}
