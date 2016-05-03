@@ -613,6 +613,16 @@ is printed.
   var **radar**Detector: **Radar**Scanner
   var enjoys**Scuba**Diving = true
   ~~~
+
+  Words conventionally written with mixed case (usually proper names) should be
+  uniformly downcased when used in a lowercase context, and have only the
+  first letter upcased when used in a capitalized context:
+
+  ~~~swift
+  let **tex**Renderer = **TeX**Renderer()
+  let **ipad**Enabled = supports**IPad**()
+  ~~~
+
   {{enddetail}}
 
   
