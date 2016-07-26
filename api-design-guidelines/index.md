@@ -100,11 +100,11 @@ is printed.
 
       ~~~ swift
       /// **Inserts** `newHead` at the beginning of `self`.
-      mutating func prepend(newHead: Int)
+      mutating func prepend(_ newHead: Int)
 
       /// **Returns** a `List` containing `head` followed by the elements
       /// of `self`.
-      func prepending(head: Element) -> List
+      func prepending(_ head: Element) -> List
 
       /// **Removes and returns** the first element of `self` if non-empty;
       /// returns `nil` otherwise.
@@ -165,7 +165,7 @@ is printed.
     /// - **SeeAlso**: `CustomDebugStringConvertible`,   <span class="graphic">⎟</span>
     ///   `CustomStringConvertible`, `debugPrint`.   <span class="graphic">⎭</span>
     public func print<Target: OutputStreamType>(
-      items: Any..., separator: String = " ", terminator: String = "\n")
+      _ items: Any..., separator: String = " ", terminator: String = "\n")
     ~~~
 
     {{expand}}
@@ -237,7 +237,7 @@ is printed.
   *merely repeat* type information.
 
   ~~~ swift
-  public mutating func removeElement(member: Element) -> Element?
+  public mutating func removeElement(_ member: Element) -> Element?
 
   allViews.removeElement(cancelButton)
   ~~~
@@ -247,7 +247,7 @@ is printed.
   site. This API would be better:
 
   ~~~ swift
-  public mutating func remove(member: Element) -> Element?
+  public mutating func remove(_ member: Element) -> Element?
 
   allViews.remove(cancelButton) // clearer
   ~~~
@@ -313,7 +313,7 @@ is printed.
   example, the declaration may be clear, but the use site is vague.
 
   ~~~ swift
-  func add(observer: NSObject, for keyPath: String)
+  func add(_ observer: NSObject, for keyPath: String)
 
   grid.add(self, for: graphics) // vague
   ~~~
@@ -636,13 +636,13 @@ is printed.
   ~~~ swift
   extension Shape {
     /// Returns `true` iff `other` is within the area of `self`.
-    func **contains**(other: **Point**) -> Bool { ... }
+    func **contains**(_ other: **Point**) -> Bool { ... }
 
     /// Returns `true` iff `other` is entirely within the area of `self`.
-    func **contains**(other: **Shape**) -> Bool { ... }
+    func **contains**(_ other: **Shape**) -> Bool { ... }
 
     /// Returns `true` iff `other` is within the area of `self`.
-    func **contains**(other: **LineSegment**) -> Bool { ... }
+    func **contains**(_ other: **LineSegment**) -> Bool { ... }
   }
   ~~~
   {:.good}
@@ -654,7 +654,7 @@ is printed.
   extension Collection where Element : Equatable {
     /// Returns `true` iff `self` contains an element equal to
     /// `sought`.
-    func **contains**(sought: Element) -> Bool { ... }
+    func **contains**(_ sought: Element) -> Bool { ... }
   }
   ~~~
   {:.good}
@@ -668,7 +668,7 @@ is printed.
     func **index**() { ... }
 
     /// Returns the `n`th row in the given table.
-    func **index**(n: Int, inTable: TableID) -> TableRow { ... }
+    func **index**(_ n: Int, inTable: TableID) -> TableRow { ... }
   }
   ~~~
   {:.bad}
@@ -764,7 +764,7 @@ func move(from **start**: Point, to **end**: Point)
   extension String {
     /// *...description...*
     public func compare(
-       other: String, options: CompareOptions **= []**,
+       _ other: String, options: CompareOptions **= []**,
        range: Range<Index>? **= nil**, locale: Locale? **= nil**
     ) -> Ordering
   }
@@ -776,15 +776,15 @@ func move(from **start**: Point, to **end**: Point)
   ~~~ swift
   extension String {
     /// *...description 1...*
-    public func **compare**(other: String) -> Ordering
+    public func **compare**(_ other: String) -> Ordering
     /// *...description 2...*
-    public func **compare**(other: String, options: CompareOptions) -> Ordering
+    public func **compare**(_ other: String, options: CompareOptions) -> Ordering
     /// *...description 3...*
     public func **compare**(
-       other: String, options: CompareOptions, range: Range<Index>) -> Ordering
+       _ other: String, options: CompareOptions, range: Range<Index>) -> Ordering
     /// *...description 4...*
     public func **compare**(
-       other: String, options: StringCompareOptions,
+       _ other: String, options: StringCompareOptions,
        range: Range<Index>, locale: Locale) -> Ordering
   }
   ~~~
@@ -968,13 +968,12 @@ x.move(**from:** x, **to:** y)
   ~~~ swift
   struct Array<Element> {
     /// Inserts `newElement` at `self.endIndex`.
-    public mutating func append(newElement: Element)
+    public mutating func append(_ newElement: Element)
 
     /// Inserts the contents of `newElements`, in order, at
     /// `self.endIndex`.
-    public mutating func append<
-      S : SequenceType where S.Generator.Element == Element
-    >(newElements: S)
+    public mutating func append<S: SequenceType>(_ newElements: S)
+      where S.Generator.Element == Element
   }
   ~~~
   {:.bad}
@@ -996,13 +995,12 @@ x.move(**from:** x, **to:** y)
   ~~~ swift
   struct Array {
     /// Inserts `newElement` at `self.endIndex`.
-    public mutating func append(newElement: Element)
+    public mutating func append(_ newElement: Element)
 
     /// Inserts the contents of `newElements`, in order, at
     /// `self.endIndex`.
-    public mutating func append<
-      S : SequenceType where S.Generator.Element == Element
-    >(**contentsOf** newElements: S)
+    public mutating func append<S: SequenceType>(**contentsOf** newElements: S)
+      where S.Generator.Element == Element
   }
   ~~~
   {:.good}
