@@ -395,8 +395,8 @@ is printed.
   In practice, this guideline along with those for
   [argument labels](#argument-labels) means the first argument will
   have a label unless the call is performing a
-  [full-width type conversion](#type-conversion).
-
+  [value preserving type conversion](#type-conversion).
+  
   ~~~swift
   let rgbForeground = RGBColor(cmykForeground)
   ~~~
@@ -816,7 +816,7 @@ x.move(**from:** x, **to:** y)
   e.g. `min(number1, number2)`, `zip(sequence1, sequence2)`.
   {:#no-labels-for-indistinguishable-arguments}
   
-* **In initializers that perform full-width type conversions, omit the
+* **In initializers that perform value preserving type conversions, omit the
   first argument label**, e.g. `Int64(someUInt32)`
   {:#type-conversion}
   
@@ -850,6 +850,21 @@ x.move(**from:** x, **to:** y)
     init(**saturating** valueToApproximate: UInt64)
   }
   ~~~
+  
+  > A value preserving type conversion is a
+  > [monomorphism](https://en.wikipedia.org/wiki/Monomorphism), i.e.
+  > every difference in the
+  > value of the source results in a difference in the value of the
+  > result.
+  > For example, conversion from `Int8` to `Int64` is value
+  > preserving because every distinct `Int8` value is converted to a
+  > distinct `Int64` value.  Conversion in the other direction, however,
+  > cannot be value preserving: `Int64` has more possible values than
+  > can be represented in an `Int8`.
+  >
+  > Note: the ability to retrieve the original value has no bearing
+  > on whether a conversion is value preserving.
+
   {{enddetail}}
 
 * **When the first argument forms part of a
