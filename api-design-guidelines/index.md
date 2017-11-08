@@ -366,20 +366,21 @@ is printed.
   e.g. `x.makeIterator()`.
   {:#begin-factory-name-with-make}
 
-* **Initializer and
-  [factory method](https://en.wikipedia.org/wiki/Factory_method_pattern) calls**
-  should form a phrase that does not include the first argument,
+* The first argument to **initializer and
+  [factory methods](https://en.wikipedia.org/wiki/Factory_method_pattern) calls**
+  should not form a phrase starting with the base name,
   e.g. `x.makeWidget(cogCount: 47)`
   {:#init-factory-phrase-ends-with-basename}
 
   {{expand}}
   {{detail}}
-  For example, the phrases implied by these calls do not include the
-  first argument:
+  For example, the first arguments to the these calls do not read as part of the same
+  phrase as the base name:
   
   ~~~swift
   let foreground = **Color**(red: 32, green: 64, blue: 128)
   let newPart = **factory.makeWidget**(gears: 42, spindles: 14)
+  let ref = **Link**(target: destination)
   ~~~
   {:.good}
   
@@ -389,6 +390,7 @@ is printed.
   ~~~swift
   let foreground = **Color(havingRGBValuesRed: 32, green: 64, andBlue: 128)**
   let newPart = **factory.makeWidget(havingGearCount: 42, andSpindleCount: 14)**
+  let ref = **Link(to: destination)**
   ~~~
   {:.bad}
 
