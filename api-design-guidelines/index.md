@@ -933,7 +933,7 @@ x.move(**from:** x, **to:** y)
 
 ## Special Instructions
 
-* **Label closure parameters and tuple members** where they
+* **Label tuple members and name closure parameters** where they
   appear in your API.
   {:#label-closure-parameters}
   
@@ -957,20 +957,13 @@ x.move(**from:** x, **to:** y)
   ///   - **capacityChanged**: `true` iff `capacity` was updated.
   mutating func ensureUniqueStorage(
     minimumCapacity requestedCapacity: Int, 
-    allocate: (**byteCount:** Int) -> UnsafePointer&lt;Void&gt;
+    allocate: (_ **byteCount**: Int) -> UnsafePointer&lt;Void&gt;
   ) -> (**reallocated:** Bool, **capacityChanged:** Bool)
   ~~~
   
-  Although when used in closures they are technically
-  [argument labels](#argument-labels), you should choose these labels
-  and use them in documentation *as though* they were
-  [parameter names](#parameter-names).  A call to the closure in the
-  function body will read consistently with a function whose phrase
-  starting in the base name does not include the first argument:
-  
-  ~~~ swift
-  allocate(byteCount: newCount * elementSize)
-  ~~~
+  Names used for closure parameters should be chosen like
+  [parameter names](#parameter-names) for top-level functions. Labels for
+  closure arguments that appear at the call site are not supported.
   {{enddetail}}
 
 * **Take extra care with unconstrained polymorphism** (e.g. `Any`,
