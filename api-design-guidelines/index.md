@@ -1047,6 +1047,9 @@ function show_or_hide_all(){
         button.value = 'Expand all details now';
     }
 }
+if (location.search.match(/[?&]expand=true\b/)) {
+    show_or_hide_all();
+}
 </script>
 
 
