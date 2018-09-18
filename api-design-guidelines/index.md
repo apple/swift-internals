@@ -293,12 +293,13 @@ is printed.
   
   If an associated type is so tightly bound to its protocol constraint
   that the protocol name *is* the role, avoid collision by appending
-  `Type` to the associated type name:
+  `Protocol` to the protocol name:
   
   ~~~ swift
   protocol Sequence {
-    associatedtype Iterator**Type** : Iterator
+    associatedtype Iterator : Iterator**Protocol**
   }
+  protocol IteratorProtocol { ... }
   ~~~
   {{enddetail}}
   
