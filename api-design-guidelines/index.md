@@ -299,7 +299,7 @@ is printed.
   protocol Sequence {
     associatedtype Iterator : Iterator**Protocol**
   }
-  protocol IteratorProtocol { ... }
+  protocol Iterator**Protocol** { ... }
   ~~~
   {{enddetail}}
   
