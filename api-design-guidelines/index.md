@@ -375,7 +375,7 @@ is printed.
 
   {{expand}}
   {{detail}}
-  For example, the first arguments to the these calls do not read as part of the same
+  For example, the first arguments to these calls do not read as part of the same
   phrase as the base name:
   
   ~~~swift
