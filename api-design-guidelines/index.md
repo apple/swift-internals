@@ -539,7 +539,7 @@ is printed.
   {{detail}}
   It is better to name a contiguous data structure `Array` than to
   use a simplified term such as `List`, even though a beginner
-  might grasp of the meaning of `List` more easily.  Arrays are
+  might grasp the meaning of `List` more easily.  Arrays are
   fundamental in modern computing, so every programmer knows—or
   will soon learn—what an array is.  Use a term that most
   programmers are familiar with, and their web searches and
