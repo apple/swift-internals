@@ -23,6 +23,6 @@ Notes:
   above).
 * If you make changes to `_config.yml` specifically in order to serve
   these pages from an address other than
-  http://apple.github.io/swift-internals, please make sure those
+  https://apple.github.io/swift-internals, please make sure those
   changes are not included in any pull requests, so we don't
   inadvertently break the main site.
