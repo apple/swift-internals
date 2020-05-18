@@ -12,7 +12,7 @@ description: > # > means to ignore newlines until the next unindented line
   Official guidelines for Swift API design.
 timezone: America/Los_Angeles
 baseurl: "/swift-internals"
-url: "http://apple.github.io"
+url: "https://apple.github.io"
 
 exclude: [config.ru, Gemfile, Gemfile.lock, Procfile, vendor, README.md]
 
@@ -41,6 +41,6 @@ defaults:
       path: ""
       type: pages
     values:
-      official_site: http://apple.github.io
+      official_site: https://apple.github.io
       official_url: ""
       include_in_navigation: true
