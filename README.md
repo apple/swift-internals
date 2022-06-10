@@ -1,3 +1,7 @@
+## ⚠️ This repository has been archived. 
+
+This repository has been migrated to https://github.com/apple/swift-org-website.
+
 # Swift Internals
 
 This is the source for the
